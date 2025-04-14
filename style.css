@@ -1,118 +1,105 @@
 body {
     margin: 0;
-    padding: 0;
-    background: #0a0a0a;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #0e0e0e;
     color: #e2e2e2;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 header {
-    background: #0a0a0a;
-    padding: 20px 0;
     text-align: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 20px;
+    background-color: #141414;
+    border-bottom: 1px solid #2a2a2a;
 }
 
-.header-content h1 {
-    margin: 0;
-    font-size: 2.5rem;
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-.header-content p {
-    margin: 8px 0;
-    font-size: 1rem;
-    opacity: 0.8;
+header p {
+    font-size: 18px;
+    color: #aaa;
+}
+
+nav {
+    margin-top: 15px;
 }
 
 nav a {
+    color: #e2e2e2;
     margin: 0 15px;
     text-decoration: none;
-    color: #e2e2e2;
     font-weight: 500;
 }
 
-nav a:hover {
-    color: #1a73e8;
-}
-
-#hero {
-    text-align: center;
-    padding: 80px 20px 60px;
-}
-
-#hero h2 {
-    font-size: 2rem;
-}
-
-#hero p {
-    font-size: 1.2rem;
-    opacity: 0.7;
-}
-
-#work {
+section {
     padding: 60px 20px;
     max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.project-card {
-    background: #161616;
-    border-radius: 12px;
-    overflow: hidden;
-    text-decoration: none;
-    color: #e2e2e2;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card img {
-    width: 100%;
-    display: block;
-}
-
-.project-card h3 {
-    margin: 15px;
-    font-size: 1.2rem;
-}
-
-.project-card p {
-    margin: 0 15px 20px;
-    opacity: 0.7;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-#about, #contact {
-    padding: 60px 20px;
+    margin: auto;
     text-align: center;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
 }
 
 .download-btn {
     display: inline-block;
-    padding: 12px 24px;
     background: #1a73e8;
+    color: white;
+    padding: 12px 24px;
     border-radius: 8px;
-    color: #fff;
     text-decoration: none;
+    font-weight: bold;
     margin-top: 20px;
-}
-
-.download-btn:hover {
-    background: #145abf;
 }
 
 footer {
     text-align: center;
+    padding: 30px;
+    font-size: 14px;
+    background: #161616;
+    color: #666;
+    border-top: 1px solid #2a2a2a;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.project-card {
+    background: #1a1a1a;
     padding: 20px;
-    font-size: 0.85rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    background: #0a0a0a;
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #bbb;
+    margin-top: 8px;
 }
