@@ -83,6 +83,36 @@ section {
     font-weight: bold;
 }
 
+.latest-project-card {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.latest-project-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.latest-project-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.latest-project-card a {
+    display: inline-block;
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact, #resume {
+    text-align: center;
+}
+
 #resume a {
     display: inline-block;
     background: #1a73e8;
@@ -101,7 +131,17 @@ section {
 footer {
     text-align: center;
     padding: 20px;
-    font-size: 14px;
-    border-top: 1px solid #2a2a2a;
-    background: #161616;
+    background-color: #161616;
+    color: #e2e2e2;
+}
+
+footer a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }
