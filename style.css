@@ -31,23 +31,15 @@ nav a {
     font-weight: 700;
 }
 
-/* About Section */
-#about {
-    padding: 40px 20px;
+/* Top Banner (Apple Style) */
+.top-banner {
+    background-color: #333;
+    color: white;
     text-align: center;
-    background: #202020;
-}
-
-#about h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 18px;
-    line-height: 1.5;
-    max-width: 800px;
-    margin: auto;
+    padding: 10px 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 /* Portfolio Section */
@@ -71,7 +63,7 @@ nav a {
 }
 
 .portfolio .project-card {
-    width: 350px;
+    width: 380px; /* Increased the project size */
     background-color: #292929;
     border-radius: 8px;
     overflow: hidden;
@@ -135,6 +127,25 @@ nav a {
     text-decoration: none;
 }
 
+/* About Section */
+#about {
+    padding: 40px 20px;
+    text-align: center;
+    background: #202020;
+}
+
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: auto;
+}
+
 /* Contact Section */
 #contact {
     padding: 40px 20px;
@@ -183,28 +194,6 @@ footer {
     background: #161616;
     color: #b0b0b0;
     border-top: 1px solid #2a2a2a;
-}
-
-/* Top Banner (Apple Style) */
-.top-banner {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-/* Professional Email and Contact */
-#contact p {
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-#contact p a {
-    font-weight: normal;
-    text-transform: none;
 }
 
 /* Responsive Design */
