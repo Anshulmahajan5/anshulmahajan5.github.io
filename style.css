@@ -1,105 +1,117 @@
 body {
     margin: 0;
-    font-family: "Segoe UI", sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #0e0e0e;
     color: #e2e2e2;
 }
 
 header {
+    padding: 20px;
     text-align: center;
-    padding: 40px 20px;
-    background-color: #141414;
+    background: #161616;
     border-bottom: 1px solid #2a2a2a;
 }
 
 header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
-header p {
-    font-size: 18px;
-    color: #aaa;
-}
-
-nav {
-    margin-top: 15px;
-}
-
-nav a {
-    color: #e2e2e2;
+header nav a {
     margin: 0 15px;
+    color: #e2e2e2;
     text-decoration: none;
-    font-weight: 500;
 }
 
-section {
-    padding: 60px 20px;
-    max-width: 1200px;
+.container {
+    padding: 40px 20px;
+    max-width: 960px;
     margin: auto;
-    text-align: center;
 }
 
-h2 {
-    font-size: 32px;
+section h2 {
+    font-size: 2rem;
+    text-align: center;
     margin-bottom: 30px;
+}
+
+.portfolio {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    width: 30%;
+    background-color: #161616;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.project-card h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .download-btn {
     display: inline-block;
     background: #1a73e8;
     color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.email-layout {
+    background: #161616;
+    padding: 20px;
     border-radius: 8px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.email-layout a {
+    color: #1a73e8;
     text-decoration: none;
     font-weight: bold;
-    margin-top: 20px;
 }
 
 footer {
     text-align: center;
-    padding: 30px;
-    font-size: 14px;
-    background: #161616;
-    color: #666;
-    border-top: 1px solid #2a2a2a;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.project-card {
-    background: #1a1a1a;
     padding: 20px;
-    border-radius: 16px;
-    text-decoration: none;
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
-
-.project-card img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    object-fit: cover;
-}
-
-.project-card h3 {
-    margin: 0;
-    font-size: 20px;
-}
-
-.project-card p {
     font-size: 14px;
-    color: #bbb;
-    margin-top: 8px;
+    border-top: 1px solid #2a2a2a;
+    background: #161616;
+}
+
+.social-link {
+    color: #9b59b6; /* Purple color for social links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-link:hover {
+    text-decoration: underline;
 }
