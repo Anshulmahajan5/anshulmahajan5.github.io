@@ -5,32 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Anshul Mahajan — 3D Product Video Specialist & Motion Designer">
     <title>Anshul Mahajan | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Apple-like Top Banner -->
+    <div class="top-banner">
+        <p>Explore the Latest in 3D Product Videos | <a href="https://www.behance.net/anshul_mahajan" target="_blank">View Projects</a> | <a href="mailto:anshulmahajan752@gmail.com">Contact Me</a></p>
+    </div>
 
-    <!-- Header Section -->
     <header>
-        <h1>Anshul Mahajan</h1>
-        <p>3D Product Video Specialist | Motion Designer</p>
-        <nav>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#latest-project">Latest Project</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-content">
+            <h1>Anshul Mahajan</h1>
+            <p>3D Product Video Specialist | Motion Designer</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Portfolio Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>
+                I am an experienced 3D Product Video Specialist and Motion Designer with expertise in creating visually stunning, high-impact content. My proficiency spans Blender, Cinema 4D, Unreal Engine, and other leading tools. I specialize in crafting cinematic 3D product advertisements and visual storytelling.
+            </p>
+            <p>
+                As part of Takila Designs, I deliver high-quality, 15–45 second 3D product videos that showcase product features with intricate details, driven by meticulous lighting and realism.
+            </p>
+        </div>
+    </section>
+
     <section id="portfolio">
         <h2>Portfolio</h2>
-        <div class="portfolio">
+        <div class="projects-container">
             <!-- Project 1 -->
             <div class="project-card">
-                <img src="Pebble_Neo.jpg" alt="Pebble Neo">
+                <img src="Pebble_Neo.gif" alt="Pebble Neo">
                 <h3>Pebble Neo</h3>
-                <p>Redefining Everyday Elegance</p>
                 <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank">View Project</a>
             </div>
 
@@ -38,7 +53,6 @@
             <div class="project-card">
                 <img src="Lava_O3.gif" alt="Lava O3">
                 <h3>Lava O3</h3>
-                <p>Redefining Performance and Style</p>
                 <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank">View Project</a>
             </div>
 
@@ -46,40 +60,51 @@
             <div class="project-card">
                 <img src="Casio.png" alt="Casio">
                 <h3>Casio</h3>
-                <p>Classic Timepieces for the Modern Era</p>
                 <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <img src="Lava_Prowatch.gif" alt="Lava Prowatch X">
+                <h3>Lava Prowatch X</h3>
+                <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <img src="ProBuds.jpg" alt="Lava ProBuds">
+                <h3>Lava ProBuds</h3>
+                <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank">View Project</a>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <img src="Vast.png" alt="Vast">
+                <h3>Vast</h3>
+                <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank">View Project</a>
             </div>
         </div>
     </section>
 
-    <!-- Latest Project Section -->
-    <section id="latest-project">
-        <h2>Latest Project</h2>
-        <iframe src="https://player.vimeo.com/video/1067041442?h=18282ec84f&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; picture-in-picture" style="width:100%;height:80vh;" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+    <section id="resume">
+        <h2>Resume</h2>
+        <a href="Anshul.pdf" class="download-btn" download>Download My Resume</a>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a 3D product video specialist with a passion for creating visually striking, high-impact visual content using Blender, Cinema 4D, Unreal Engine and more. I specialize in crafting cinematic product advertisements and immersive 3D visuals that enhance storytelling and brand presence.</p>
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>Email me: <a href="mailto:anshulmahajan752@gmail.com">anshulmahajan752@gmail.com</a></p>
+            <p>Connect with me: 
+                <a href="https://www.linkedin.com/in/anshul-mahajan-">LinkedIn</a> | 
+                <a href="https://www.behance.net/anshul_mahajan">Behance</a> | 
+                <a href="https://www.instagram.com/anshul_3d/">Instagram</a>
+            </p>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h3>Contact</h3>
-        <p>Feel free to reach out for collaborations, inquiries, or just to say hi!</p>
-        <p>Email me: <a href="mailto:anshulmahajan752@gmail.com">anshulmahajan752@gmail.com</a></p>
-        <p>
-            <a href="https://www.linkedin.com/in/anshul-mahajan-" target="_blank">LinkedIn</a> | 
-            <a href="https://www.behance.net/anshul_mahajan" target="_blank">Behance</a> | 
-            <a href="https://www.instagram.com/anshul_3d/" target="_blank">Instagram</a>
-        </p>
-    </section>
-
-    <!-- Footer Section -->
     <footer>
         &copy; 2025 Anshul Mahajan. All rights reserved.
     </footer>
-
 </body>
 </html>
