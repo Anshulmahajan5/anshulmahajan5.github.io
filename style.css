@@ -1,4 +1,4 @@
-/* Resetting default styles */
+/* Resetting some default styles */
 * {
     margin: 0;
     padding: 0;
@@ -17,10 +17,6 @@ header {
     background-color: #333;
     padding: 20px 0;
     text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
 }
 
 header h1 {
@@ -49,7 +45,7 @@ nav a {
 
 /* Section Styling */
 section {
-    padding: 100px 0 60px 0;
+    padding: 60px 0;
 }
 
 /* Title of each section */
@@ -59,7 +55,7 @@ section h2 {
     color: #ff66b2;
 }
 
-/* Portfolio Grid Styling */
+/* Portfolio Section */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -85,7 +81,6 @@ section h2 {
     object-fit: cover;
 }
 
-/* Project Title Overlay */
 .project-info {
     position: absolute;
     top: 50%;
@@ -94,12 +89,9 @@ section h2 {
     color: white;
     font-size: 1.5em;
     text-align: center;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
 }
 
-/* About & Contact Section */
+/* About Section */
 #about, #contact {
     background-color: #222;
 }
@@ -108,14 +100,9 @@ section h2 {
     font-size: 1.1em;
     line-height: 1.5em;
     color: #ccc;
-    text-align: center;
 }
 
-/* Contact Links */
-.contact-links {
-    margin-top: 20px;
-}
-
+/* Contact Section */
 .contact-links a {
     color: #ff66b2;
     text-decoration: none;
@@ -137,7 +124,7 @@ section h2 {
     text-decoration: none;
 }
 
-/* Footer Styling */
+/* Footer */
 footer {
     text-align: center;
     padding: 20px 0;
@@ -155,7 +142,7 @@ footer {
     color: white;
 }
 
-/* Responsive Design for Tablets */
+/* Responsive Design for smaller screens */
 @media (max-width: 768px) {
     .portfolio-grid {
         grid-template-columns: 1fr 1fr;
@@ -187,7 +174,6 @@ footer {
     }
 }
 
-/* Responsive Design for Mobile */
 @media (max-width: 480px) {
     .portfolio-grid {
         grid-template-columns: 1fr;
