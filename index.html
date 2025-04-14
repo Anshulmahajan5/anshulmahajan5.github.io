@@ -6,90 +6,7 @@
     <meta name="description" content="Anshul Mahajan — 3D Product Video Specialist & Motion Designer">
     <title>Anshul Mahajan | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body { 
-            margin: 0; 
-            font-family: 'Poppins', sans-serif; 
-            background-color: #0e0e0e; 
-            color: #e2e2e2; 
-        }
-        header { 
-            padding: 20px; 
-            text-align: center; 
-            background: #161616; 
-            border-bottom: 1px solid #2a2a2a; 
-        }
-        header h1 { 
-            margin: 0; 
-            font-weight: 600; 
-        }
-        nav a { 
-            margin: 0 15px; 
-            color: #e2e2e2; 
-            text-decoration: none; 
-            font-weight: 400;
-        }
-        section { 
-            padding: 40px 20px; 
-            max-width: 960px; 
-            margin: auto; 
-        }
-        .portfolio { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 30px; 
-            justify-content: space-between; 
-        }
-        .portfolio .project-card { 
-            background: #161616; 
-            padding: 20px; 
-            border-radius: 8px; 
-            width: 45%; 
-            box-sizing: border-box; 
-            transition: transform 0.3s ease;
-        }
-        .portfolio .project-card:hover { 
-            transform: scale(1.05); 
-        }
-        .portfolio .project-card img { 
-            width: 100%; 
-            height: 300px;
-            object-fit: cover;
-            border-radius: 8px; 
-        }
-        .portfolio .project-card h3 { 
-            font-weight: 600; 
-            color: #e2e2e2; 
-            margin-top: 10px; 
-        }
-        .portfolio .project-card p { 
-            color: #a0a0a0; 
-        }
-        .portfolio .project-card a { 
-            text-decoration: none; 
-            color: #1a73e8; 
-            font-weight: 500;
-        }
-        #latest-project iframe { 
-            width: 100%; 
-            height: 500px; 
-            border-radius: 8px; 
-        }
-        footer { 
-            text-align: center; 
-            padding: 20px; 
-            font-size: 14px; 
-            border-top: 1px solid #2a2a2a; 
-            background: #161616; 
-        }
-        #contact a { 
-            color: #1a73e8; 
-            text-decoration: none; 
-        }
-        #contact a:hover { 
-            text-decoration: underline; 
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS file -->
 </head>
 <body>
 
@@ -98,17 +15,12 @@
         <h1>Anshul Mahajan</h1>
         <p>3D Product Video Specialist | Motion Designer</p>
         <nav>
-            <a href="#about">About</a>
             <a href="#portfolio">Portfolio</a>
+            <a href="#latest-project">Latest Project</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I'm a 3D product video specialist with a passion for creating visually striking, high-impact visual content using Blender, Cinema 4D, Unreal Engine and more. I specialize in crafting cinematic product advertisements and immersive 3D visuals that enhance storytelling and brand presence.</p>
-    </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio">
@@ -137,42 +49,25 @@
                 <p>Classic Timepieces for the Modern Era</p>
                 <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank">View Project</a>
             </div>
-
-            <!-- Project 4 -->
-            <div class="project-card">
-                <img src="Lava_Prowatch.jpg" alt="Lava Prowatch X">
-                <h3>Lava Prowatch X</h3>
-                <p>Precision and Innovation Combined</p>
-                <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank">View Project</a>
-            </div>
-
-            <!-- Project 5 -->
-            <div class="project-card">
-                <img src="ProBuds.jpg" alt="Lava ProBuds">
-                <h3>Lava ProBuds</h3>
-                <p>Powerful Sound and Performance</p>
-                <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank">View Project</a>
-            </div>
-
-            <!-- Project 6 -->
-            <div class="project-card">
-                <img src="Vast.png" alt="VAST">
-                <h3>VAST</h3>
-                <p>Journey to the Cosmos</p>
-                <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank">View Project</a>
-            </div>
         </div>
     </section>
 
     <!-- Latest Project Section -->
     <section id="latest-project">
         <h2>Latest Project</h2>
-        <iframe src="https://player.vimeo.com/video/1073498873?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; picture-in-picture" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+        <iframe src="https://player.vimeo.com/video/1067041442?h=18282ec84f&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; picture-in-picture" style="width:100%;height:80vh;" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a 3D product video specialist with a passion for creating visually striking, high-impact visual content using Blender, Cinema 4D, Unreal Engine and more. I specialize in crafting cinematic product advertisements and immersive 3D visuals that enhance storytelling and brand presence.</p>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact</h2>
+    <section id="contact" class="contact-section">
+        <h3>Contact</h3>
+        <p>Feel free to reach out for collaborations, inquiries, or just to say hi!</p>
         <p>Email me: <a href="mailto:anshulmahajan752@gmail.com">anshulmahajan752@gmail.com</a></p>
         <p>
             <a href="https://www.linkedin.com/in/anshul-mahajan-" target="_blank">LinkedIn</a> | 
