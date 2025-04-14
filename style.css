@@ -5,21 +5,6 @@ body {
     color: #e2e2e2;
 }
 
-.top-banner {
-    background-color: #161616;
-    color: #e2e2e2;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.top-banner a {
-    color: #1a73e8;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
 header {
     padding: 40px 20px;
     text-align: center;
