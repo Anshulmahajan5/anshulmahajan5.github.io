@@ -1,142 +1,206 @@
+/* Resetting some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styling */
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
 }
 
+/* Header Styling */
 header {
-    background-color: #111;
-    color: #fff;
-    padding: 20px;
+    background-color: #333;
+    padding: 20px 0;
     text-align: center;
 }
 
 header h1 {
     font-size: 2.5em;
     margin: 0;
+    color: white;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
+nav {
+    margin-top: 10px;
 }
 
-header nav ul li {
-    display: inline;
-    margin: 0 20px;
-}
-
-header nav ul li a {
-    color: #fff;
+nav a {
+    color: #ff66b2;
+    margin: 0 15px;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
-header nav ul li a:hover {
-    color: #6a0dad;
+/* Container for sections */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
 }
 
+/* Section Styling */
 section {
     padding: 60px 0;
 }
 
-h2 {
+/* Title of each section */
+section h2 {
     font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    color: #ff66b2;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
+/* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
 }
 
-.portfolio-projects {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.project {
-    width: 30%;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.project img {
-    width: 100%;
-    border-radius: 10px;
+.portfolio-item {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
 }
 
-.project img:hover {
+.portfolio-item:hover {
     transform: scale(1.05);
 }
 
-.project a {
-    display: block;
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #6a0dad;
-    text-decoration: none;
-}
-
-.project a:hover {
-    text-decoration: underline;
-}
-
-#latest-project iframe {
+.portfolio-item img {
     width: 100%;
-    height: 500px;
-    border-radius: 10px;
+    height: 100%;
+    object-fit: cover;
 }
 
-.social-links {
-    margin-top: 20px;
+.project-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.5em;
     text-align: center;
 }
 
-.social-links a {
-    color: #6a0dad;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1.2em;
-}
-
-.social-links a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-}
-
-footer p {
-    font-size: 1.2em;
+/* About Section */
+#about, #contact {
+    background-color: #222;
 }
 
 #about p, #contact p {
-    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.5em;
+    color: #ccc;
 }
 
-#resume a {
-    display: block;
-    text-align: center;
-    font-size: 1.2em;
-    margin-top: 20px;
-    color: #6a0dad;
+/* Contact Section */
+.contact-links a {
+    color: #ff66b2;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.5em;
+}
+
+.contact-links a:hover {
+    color: #fff;
+}
+
+/* Email Button */
+.email-link {
+    background-color: #ff66b2;
+    padding: 10px 30px;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.1em;
     text-decoration: none;
 }
 
-#resume a:hover {
-    text-decoration: underline;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #aaa;
+}
+
+/* Social Icon Styling */
+.fab {
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+.fab:hover {
+    color: white;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav a {
+        font-size: 1em;
+    }
+
+    section h2 {
+        font-size: 2em;
+    }
+
+    .email-link {
+        font-size: 1em;
+        padding: 8px 20px;
+    }
+
+    .contact-links a {
+        font-size: 1.2em;
+    }
+
+    footer {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav a {
+        font-size: 0.9em;
+    }
+
+    section h2 {
+        font-size: 1.8em;
+    }
+
+    .email-link {
+        font-size: 0.9em;
+        padding: 6px 15px;
+    }
+
+    .contact-links a {
+        font-size: 1.2em;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
 }
