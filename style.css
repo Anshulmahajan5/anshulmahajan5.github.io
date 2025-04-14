@@ -123,3 +123,20 @@ footer {
 footer p {
     font-size: 1.2em;
 }
+
+#about p, #contact p {
+    text-align: center;
+}
+
+#resume a {
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+    color: #6a0dad;
+    text-decoration: none;
+}
+
+#resume a:hover {
+    text-decoration: underline;
+}
