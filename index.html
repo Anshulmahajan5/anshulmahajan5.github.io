@@ -3,95 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshul Mahajan - 3D Product Visualization</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Anshul Mahajan — 3D Product Video Specialist & Motion Designer">
+    <title>Anshul Mahajan | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            margin: 0; 
+            font-family: 'Poppins', sans-serif; 
+            background-color: #0e0e0e; 
+            color: #e2e2e2; 
+        }
+        header { 
+            padding: 20px; 
+            text-align: center; 
+            background: #161616; 
+            border-bottom: 1px solid #2a2a2a; 
+        }
+        header h1 { 
+            margin: 0; 
+            font-weight: 600; 
+        }
+        nav a { 
+            margin: 0 15px; 
+            color: #e2e2e2; 
+            text-decoration: none; 
+            font-weight: 400;
+        }
+        section { 
+            padding: 40px 20px; 
+            max-width: 960px; 
+            margin: auto; 
+        }
+        .portfolio { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 30px; 
+            justify-content: space-between; 
+        }
+        .portfolio .project-card { 
+            background: #161616; 
+            padding: 20px; 
+            border-radius: 8px; 
+            width: 45%; 
+            box-sizing: border-box; 
+            transition: transform 0.3s ease;
+        }
+        .portfolio .project-card:hover { 
+            transform: scale(1.05); 
+        }
+        .portfolio .project-card img { 
+            width: 100%; 
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px; 
+        }
+        .portfolio .project-card h3 { 
+            font-weight: 600; 
+            color: #e2e2e2; 
+            margin-top: 10px; 
+        }
+        .portfolio .project-card p { 
+            color: #a0a0a0; 
+        }
+        .portfolio .project-card a { 
+            text-decoration: none; 
+            color: #1a73e8; 
+            font-weight: 500;
+        }
+        #latest-project iframe { 
+            width: 100%; 
+            height: 500px; 
+            border-radius: 8px; 
+        }
+        footer { 
+            text-align: center; 
+            padding: 20px; 
+            font-size: 14px; 
+            border-top: 1px solid #2a2a2a; 
+            background: #161616; 
+        }
+        #contact a { 
+            color: #1a73e8; 
+            text-decoration: none; 
+        }
+        #contact a:hover { 
+            text-decoration: underline; 
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Top Banner -->
-    <div class="top-banner">
-        <span>Crafting Exceptional 3D Visuals</span>
-    </div>
-
-    <!-- Header -->
+    <!-- Header Section -->
     <header>
         <h1>Anshul Mahajan</h1>
-        <p>3D Product Visualization Expert</p>
+        <p>3D Product Video Specialist | Motion Designer</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I'm a 3D product video specialist with a passion for creating visually striking, high-impact visual content using Blender, Cinema 4D, Unreal Engine and more. I specialize in crafting cinematic product advertisements and immersive 3D visuals that enhance storytelling and brand presence.</p>
+    </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio">
         <h2>Portfolio</h2>
         <div class="portfolio">
+            <!-- Project 1 -->
             <div class="project-card">
-                <img src="path/to/your/project1_image.jpg" alt="Pebble Neo">
+                <img src="Pebble_Neo.jpg" alt="Pebble Neo">
                 <h3>Pebble Neo</h3>
-                <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance">View Project</a>
+                <p>Redefining Everyday Elegance</p>
+                <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank">View Project</a>
             </div>
+
+            <!-- Project 2 -->
             <div class="project-card">
-                <img src="path/to/your/project2_image.jpg" alt="Lava O3">
+                <img src="Lava_O3.gif" alt="Lava O3">
                 <h3>Lava O3</h3>
-                <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style">View Project</a>
+                <p>Redefining Performance and Style</p>
+                <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank">View Project</a>
             </div>
+
+            <!-- Project 3 -->
             <div class="project-card">
-                <img src="path/to/your/project3_image.jpg" alt="Casio">
+                <img src="Casio.png" alt="Casio">
                 <h3>Casio</h3>
-                <a href="https://www.behance.net/gallery/210212511/Casio">View Project</a>
+                <p>Classic Timepieces for the Modern Era</p>
+                <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank">View Project</a>
             </div>
+
+            <!-- Project 4 -->
             <div class="project-card">
-                <img src="path/to/your/project4_image.jpg" alt="Lava Prowatch">
+                <img src="Lava_Prowatch.jpg" alt="Lava Prowatch X">
                 <h3>Lava Prowatch X</h3>
-                <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X">View Project</a>
+                <p>Precision and Innovation Combined</p>
+                <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank">View Project</a>
             </div>
+
+            <!-- Project 5 -->
             <div class="project-card">
-                <img src="path/to/your/project5_image.jpg" alt="Lava ProBuds">
+                <img src="ProBuds.jpg" alt="Lava ProBuds">
                 <h3>Lava ProBuds</h3>
-                <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds">View Project</a>
+                <p>Powerful Sound and Performance</p>
+                <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank">View Project</a>
             </div>
+
+            <!-- Project 6 -->
             <div class="project-card">
-                <img src="path/to/your/project6_image.jpg" alt="VAST">
+                <img src="Vast.png" alt="VAST">
                 <h3>VAST</h3>
-                <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos">View Project</a>
+                <p>Journey to the Cosmos</p>
+                <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank">View Project</a>
             </div>
         </div>
     </section>
 
- <!-- Latest Project Section -->
-<section id="latest-project">
-    <h2>Latest Project: Royal Steel</h2>
-    <div class="latest-project-card">
-        <iframe src="https://player.vimeo.com/video/1073498873?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; picture-in-picture" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
-        <h3>Royal Steel - Redefining Strength</h3>
-        <a href="https://www.behance.net/gallery/223203521/Pebble-Royal-Steel-Series" target="_blank">View on Behance</a>
-    </div>
-</section>
-
-
-    <!-- About Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a passionate 3D Product Visualization Specialist with expertise in crafting high-quality visuals for brands and companies. With experience in Blender, Cinema 4D, and other 3D software, I specialize in producing stunning 3D models and animations that showcase products in their best light. I have had the privilege of working with top brands and have honed my skills to provide visuals that push creative boundaries. Let’s create something extraordinary together!</p>
+    <!-- Latest Project Section -->
+    <section id="latest-project">
+        <h2>Latest Project</h2>
+        <iframe src="https://player.vimeo.com/video/1073498873?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" frameborder="0" allow="autoplay; picture-in-picture" sandbox="allow-same-origin allow-scripts allow-pointer-lock allow-forms allow-popups"></iframe>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>Feel free to reach out for collaborations, inquiries, or just a friendly chat!</p>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:anshulmahjan752@gmail.com">anshulmahjan752@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/anshul-mahajan-12345678/">Visit My LinkedIn</a></p>
-        </div>
+        <p>Email me: <a href="mailto:anshulmahajan752@gmail.com">anshulmahajan752@gmail.com</a></p>
+        <p>
+            <a href="https://www.linkedin.com/in/anshul-mahajan-" target="_blank">LinkedIn</a> | 
+            <a href="https://www.behance.net/anshul_mahajan" target="_blank">Behance</a> | 
+            <a href="https://www.instagram.com/anshul_3d/" target="_blank">Instagram</a>
+        </p>
     </section>
 
-    <!-- Resume Section -->
-    <section id="resume">
-        <a href="path/to/your/resume.pdf" download>Download Resume</a>
-    </section>
-
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 Anshul Mahajan. All Rights Reserved.</p>
+        &copy; 2025 Anshul Mahajan. All rights reserved.
     </footer>
 
 </body>
