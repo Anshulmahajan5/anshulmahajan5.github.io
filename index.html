@@ -1,118 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Anshul Mahajan — 3D Product Video Specialist & Motion Designer">
     <title>Anshul Mahajan | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;500&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #0e0e0e;
+            color: #e2e2e2;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+            background: #161616;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            color: #e2e2e2;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* About Section */
+        #about {
+            padding: 40px 20px;
+            text-align: center;
+            background: #202020;
+        }
+
+        #about h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 18px;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            padding: 40px 20px;
+            background: #202020;
+            text-align: center;
+        }
+
+        #portfolio h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .portfolio {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .portfolio .project-card {
+            width: 300px;
+            background-color: #292929;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .portfolio .project-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .portfolio .project-card h3 {
+            color: #fff;
+            font-size: 20px;
+            margin: 15px 0;
+        }
+
+        .portfolio .project-card a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Latest Project Section */
+        #latest-project {
+            padding: 40px 20px;
+            background: #161616;
+            text-align: center;
+        }
+
+        #latest-project h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .latest-project-card {
+            margin: 0 auto;
+            max-width: 960px;
+        }
+
+        .latest-project-card iframe {
+            width: 100%;
+            height: 500px;
+        }
+
+        .latest-project-card h3 {
+            font-size: 28px;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        .latest-project-card a {
+            color: #1a73e8;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 40px 20px;
+            text-align: center;
+            background: #202020;
+        }
+
+        #contact h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .contact-info a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Resume Section */
+        #resume {
+            padding: 40px 20px;
+            text-align: center;
+            background: #161616;
+        }
+
+        #resume a {
+            display: inline-block;
+            background: #1a73e8;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            background: #161616;
+            color: #b0b0b0;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        /* Top Banner (Apple Style) */
+        .top-banner {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
+
 <body>
 
-<header>
-    <div class="header-content">
+    <!-- Top Banner -->
+    <div class="top-banner">
+        Shop Now: Mac | iPad | iPhone | Accessories
+    </div>
+
+    <!-- Header Section -->
+    <header>
         <h1>Anshul Mahajan</h1>
         <p>3D Product Video Specialist | Motion Designer</p>
         <nav>
-            <a href="#projects">Projects</a>
+            <a href="#portfolio">Portfolio</a>
             <a href="#about">About</a>
             <a href="#latest-project">Latest Project</a>
             <a href="#contact">Contact</a>
         </nav>
-    </div>
-</header>
+    </header>
 
-<section id="projects">
-    <h2>Portfolio</h2>
-    <div class="projects-container">
-        <!-- Project 1 -->
-        <div class="project-card">
-            <img src="Pebble_Neo.gif" alt="Pebble Neo">
-            <h3>Pebble Neo</h3>
-            <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank">View Project</a>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-            <img src="Lava_O3.gif" alt="Lava O3">
-            <h3>Lava O3</h3>
-            <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank">View Project</a>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-            <img src="Casio.png" alt="Casio">
-            <h3>Casio</h3>
-            <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank">View Project</a>
-        </div>
-
-        <!-- Project 4 -->
-        <div class="project-card">
-            <img src="Lava_Prowatch.gif" alt="Lava Prowatch X">
-            <h3>Lava Prowatch X</h3>
-            <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank">View Project</a>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project-card">
-            <img src="ProBuds.jpg" alt="Lava ProBuds">
-            <h3>Lava ProBuds</h3>
-            <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank">View Project</a>
-        </div>
-
-        <!-- Project 6 -->
-        <div class="project-card">
-            <img src="Vast.png" alt="Vast">
-            <h3>Vast</h3>
-            <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank">View Project</a>
-        </div>
-    </div>
-</section>
-
-<section id="about">
-    <div class="container">
+    <!-- About Section -->
+    <section id="about">
         <h2>About Me</h2>
-        <p>
-            I am an experienced 3D Product Video Specialist and Motion Designer with expertise in creating visually stunning, high-impact content. My proficiency spans Blender, Cinema 4D, Unreal Engine, and other leading tools. I specialize in crafting cinematic 3D product advertisements and visual storytelling.
-        </p>
-        <p>
-            As part of Takila Designs, I deliver high-quality, 15–45 second 3D product videos that showcase product features with intricate details, driven by meticulous lighting and realism.
-        </p>
-    </div>
-</section>
+        <p>I'm a 3D product video specialist with extensive experience in creating high-impact visual content. My work focuses on producing cinematic product advertisements and animations using tools like Blender, Cinema 4D, and Unreal Engine. I specialize in designing captivating product visuals that tell a compelling story through expert lighting and realistic texturing. Currently, I work with Takila Designs, where I create high-quality 3D ads that captivate audiences and deliver messages with precision and style.</p>
+    </section>
 
-<!-- Latest Project Section with Behance Integration -->
-<section id="latest-project">
-    <h2>Latest Project</h2>
-    <div class="latest-project-card">
-        <img src="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" alt="Latest Project">
-        <h3>Pebble Neo</h3>
-        <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank">View Project</a>
-    </div>
-</section>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio">
+            <div class="project-card">
+                <img src="Pebble_Neo.gif" alt="Pebble Neo">
+                <h3>Pebble Neo</h3>
+                <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank">View Project</a>
+            </div>
 
-<section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-info">
-        <p>For collaboration or inquiries, feel free to reach out:</p>
-        <p>Email: <a href="mailto:anshulmahajan752@gmail.com">anshulmahajan752@gmail.com</a></p>
-        <p>Connect with me: 
-            <a href="https://www.linkedin.com/in/anshul-mahajan-">LinkedIn</a> | 
-            <a href="https://www.behance.net/anshul_mahajan">Behance</a> | 
-            <a href="https://www.instagram.com/anshul_3d/">Instagram</a>
-        </p>
-    </div>
-</section>
+            <div class="project-card">
+                <img src="Lava_O3.gif" alt="Lava O3">
+                <h3>Lava O3</h3>
+                <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank">View Project</a>
+            </div>
 
-<section id="resume">
-    <h2>Resume</h2>
-    <a href="Anshul.pdf" class="download-btn" download>Download My Resume</a>
-</section>
+            <div class="project-card">
+                <img src="Casio.png" alt="Casio">
+                <h3>Casio</h3>
+                <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank">View Project</a>
+            </div>
 
-<footer>
-    &copy; 2025 Anshul Mahajan. All rights reserved.
-</footer>
+            <div class="project-card">
+                <img src="Lava_Prowatch.gif" alt="Lava Prowatch">
+                <h3>Lava Prowatch</h3>
+                <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <img src="ProBuds.jpg" alt="ProBuds">
+                <h3>ProBuds</h3>
+                <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <img src="Vast.png" alt="Vast">
+                <h3>Vast</h3>
+                <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Project Section -->
+    <section id="latest-project">
+        <h2>Latest Project</h2>
+        <div class="latest-project-card">
+            <iframe src="https://vimeo.com/1073498873" width="100%" height="500" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <h3>Royal Steel</h3>
+            <a href="https://www.behance.net/gallery/XYZ/Royal-Steel" target="_blank">View Project</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>Feel free to get in touch for collaborations or inquiries.</p>
+            <p>Email: <a href="mailto:contact@anshulmahajan.com">contact@anshulmahajan.com</a></p>
+            <p>
+                <a href="https://www.linkedin.com/in/anshul-mahajan-">LinkedIn</a> |
+                <a href="https://www.behance.net/anshul_mahajan">Behance</a> |
+                <a href="https://www.instagram.com/anshul_3d/">Instagram</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume">
+        <a href="Anshul_Mahajan_Resume.pdf" download>Download My Resume</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Anshul Mahajan. All rights reserved.
+    </footer>
 
 </body>
+
 </html>
