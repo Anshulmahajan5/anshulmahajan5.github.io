@@ -23,7 +23,7 @@
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 2em;  /* Smaller header font */
             margin: 0;
         }
 
@@ -35,13 +35,13 @@
             color: #ff66b2;
             margin: 0 15px;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1.1em;  /* Slightly smaller nav links */
         }
 
+        /* Portfolio Section */
         .container {
-            width: 80%;
+            width: 85%;
             margin: 0 auto;
-            text-align: left;
         }
 
         section {
@@ -49,9 +49,11 @@
         }
 
         section h2 {
-            font-size: 2em;
+            font-size: 2.2em;  /* Slightly smaller section heading */
             margin-bottom: 20px;
             color: #ff66b2;
+            text-align: center;
+            font-weight: bold;
         }
 
         /* Portfolio Grid */
@@ -82,32 +84,18 @@
 
         .project-info {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            bottom: 20px;
+            left: 20px;
             color: white;
-            font-size: 1.5em;
-            text-align: center;
+            font-size: 1.2em;  /* Smaller font size for project info */
+            text-align: left;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
         /* Hover Effect for Project Name */
-        .portfolio-item .project-info::before {
-            content: attr(data-title);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 1.5em;
-            text-align: center;
-            z-index: 1;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .portfolio-item:hover .project-info::before {
+        .portfolio-item:hover .project-info {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
         }
 
         /* About Section */
@@ -116,7 +104,7 @@
         }
 
         #about p, #contact p {
-            font-size: 1em;
+            font-size: 1em;  /* Smaller text for paragraphs */
             line-height: 1.5em;
             color: #ccc;
         }
@@ -125,7 +113,7 @@
             color: #ff66b2;
             text-decoration: none;
             margin: 0 20px;
-            font-size: 1.5em;
+            font-size: 1.3em;  /* Slightly smaller social links */
         }
 
         .contact-links a:hover {
@@ -137,7 +125,7 @@
             padding: 10px 30px;
             border-radius: 30px;
             color: white;
-            font-size: 1.1em;
+            font-size: 1.1em;  /* Slightly smaller email button font */
             text-decoration: none;
         }
 
@@ -168,37 +156,37 @@
 
             <a href="https://www.behance.net/gallery/223759049/Lava-Blaze-3-5G-Sleek-Design-Powerful-Presence" target="_blank" class="portfolio-item">
                 <img src="Lava blaze 3.gif" alt="Lava Blaze 3">
-                <div class="project-info" data-title="Lava Blaze 3"></div>
+                <div class="project-info">Lava Blaze 3</div>
             </a>
 
             <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank" class="portfolio-item">
                 <img src="Pebble_Neo.gif" alt="Pebble Neo">
-                <div class="project-info" data-title="Pebble Neo"></div>
+                <div class="project-info">Pebble Neo</div>
             </a>
 
             <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank" class="portfolio-item">
                 <img src="Lava_O3.gif" alt="Lava O3">
-                <div class="project-info" data-title="Lava O3"></div>
+                <div class="project-info">Lava O3</div>
             </a>
 
             <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank" class="portfolio-item">
                 <img src="Lava_Prowatch.gif" alt="Lava Prowatch X">
-                <div class="project-info" data-title="Lava Prowatch X"></div>
+                <div class="project-info">Lava Prowatch X</div>
             </a>
 
             <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank" class="portfolio-item">
                 <img src="ProBuds.jpg" alt="ProBuds">
-                <div class="project-info" data-title="ProBuds"></div>
+                <div class="project-info">ProBuds</div>
             </a>
 
             <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank" class="portfolio-item">
                 <img src="Casio.png" alt="Casio">
-                <div class="project-info" data-title="Casio"></div>
+                <div class="project-info">Casio</div>
             </a>
 
             <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank" class="portfolio-item">
                 <img src="Vast.png" alt="Vast">
-                <div class="project-info" data-title="Vast"></div>
+                <div class="project-info">Vast</div>
             </a>
 
         </div>
