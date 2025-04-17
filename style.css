@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -44,6 +45,7 @@ section h2 {
     color: #ff66b2;
 }
 
+/* Portfolio Grid */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -79,23 +81,27 @@ section h2 {
     text-align: center;
 }
 
-/* Awwwards-style hover effect */
-.portfolio-item .project-info::after {
-    content: "AWARDS";
+/* Hover Effect for Project Name */
+.portfolio-item .project-info::before {
+    content: attr(data-title);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #ff66b2;
-    font-size: 1.3em;
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    z-index: 1;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.portfolio-item:hover .project-info::after {
+.portfolio-item:hover .project-info::before {
     opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
 }
 
+/* About Section */
 #about, #contact {
     background-color: #222;
 }
@@ -126,6 +132,7 @@ section h2 {
     text-decoration: none;
 }
 
+/* Footer Section */
 footer {
     text-align: center;
     padding: 20px 0;
