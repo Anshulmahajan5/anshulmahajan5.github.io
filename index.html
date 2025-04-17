@@ -75,6 +75,21 @@
             font-size: 1.5em;
             text-align: center;
         }
+        /* Awwwards-style hover effect */
+        .portfolio-item .project-info::after {
+            content: "AWARDS";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ff66b2;
+            font-size: 1.3em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .portfolio-item:hover .project-info::after {
+            opacity: 1;
+        }
         #about, #contact {
             background-color: #222;
         }
