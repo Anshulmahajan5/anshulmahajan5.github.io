@@ -301,7 +301,7 @@
 <!-- Video Popup Section -->
 <div id="video-popup">
     <button id="close-video">X</button>
-    <video width="100%" height="200" controls>
+    <video id="video-player" width="100%" height="200" controls>
         <source src="https://github.com/anshulmahajan5/anshulmahajan5.github.io/raw/main/Main_Glory.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -320,9 +320,12 @@
         }
     });
 
-    // Close video popup
+    // Close video popup and pause the video
     document.getElementById("close-video").addEventListener("click", function() {
-        document.getElementById("video-popup").style.display = "none";
+        const videoPlayer = document.getElementById("video-player");
+        videoPlayer.pause(); // Pause the video
+        videoPlayer.currentTime = 0; // Reset video to the beginning
+        document.getElementById("video-popup").style.display = "none"; // Hide the video popup
     });
 </script>
 
