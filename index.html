@@ -6,122 +6,7 @@
     <title>Anshul Mahajan | 3D Product Specialist</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            color: white;
-        }
-        header {
-            background-color: #333;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-        nav {
-            margin-top: 10px;
-        }
-        nav a {
-            color: #ff66b2;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            text-align: center;
-        }
-        section {
-            padding: 60px 0;
-        }
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #ff66b2;
-        }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .portfolio-item {
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-        .portfolio-item:hover {
-            transform: scale(1.05);
-        }
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .project-info {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 1.5em;
-            text-align: center;
-        }
-        /* Awwwards-style hover effect */
-        .portfolio-item .project-info::after {
-            content: "AWARDS";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: #ff66b2;
-            font-size: 1.3em;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .portfolio-item:hover .project-info::after {
-            opacity: 1;
-        }
-        #about, #contact {
-            background-color: #222;
-        }
-        #about p, #contact p {
-            font-size: 1.1em;
-            line-height: 1.5em;
-            color: #ccc;
-        }
-        .contact-links a {
-            color: #ff66b2;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.5em;
-        }
-        .contact-links a:hover {
-            color: #fff;
-        }
-        .email-link {
-            background-color: #ff66b2;
-            padding: 10px 30px;
-            border-radius: 30px;
-            color: white;
-            font-size: 1.1em;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: #aaa;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -139,39 +24,39 @@
         <h2>Portfolio</h2>
         <div class="portfolio-grid">
 
-            <a href="https://www.behance.net/gallery/223759049/Lava-Blaze-3-5G-Sleek-Design-Powerful-Presence" target="_blank" class="portfolio-item">
-                <img src="Lava blaze 3.gif" alt="Lava Blaze 3">
-                <div class="project-info">Lava Blaze 3</div>
+            <a href="https://www.behance.net/gallery/223759049/Lava-Blaze-3-5G-Sleek-Design-Powerful-Presence" target="_blank" class="portfolio-item" data-title="Lava Blaze 3">
+                <img src="Lava_blaze_3.gif" alt="Lava Blaze 3">
+                <div class="project-info"></div>
             </a>
 
-            <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank" class="portfolio-item">
+            <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank" class="portfolio-item" data-title="Pebble Neo">
                 <img src="Pebble_Neo.gif" alt="Pebble Neo">
-                <div class="project-info">Pebble Neo</div>
+                <div class="project-info"></div>
             </a>
 
-            <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank" class="portfolio-item">
+            <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank" class="portfolio-item" data-title="Lava O3">
                 <img src="Lava_O3.gif" alt="Lava O3">
-                <div class="project-info">Lava O3</div>
+                <div class="project-info"></div>
             </a>
 
-            <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank" class="portfolio-item">
+            <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank" class="portfolio-item" data-title="Lava Prowatch X">
                 <img src="Lava_Prowatch.gif" alt="Lava Prowatch X">
-                <div class="project-info">Lava Prowatch X</div>
+                <div class="project-info"></div>
             </a>
 
-            <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank" class="portfolio-item">
+            <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank" class="portfolio-item" data-title="ProBuds">
                 <img src="ProBuds.jpg" alt="ProBuds">
-                <div class="project-info">ProBuds</div>
+                <div class="project-info"></div>
             </a>
 
-            <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank" class="portfolio-item">
+            <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank" class="portfolio-item" data-title="Casio">
                 <img src="Casio.png" alt="Casio">
-                <div class="project-info">Casio</div>
+                <div class="project-info"></div>
             </a>
 
-            <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank" class="portfolio-item">
+            <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank" class="portfolio-item" data-title="Vast">
                 <img src="Vast.png" alt="Vast">
-                <div class="project-info">Vast</div>
+                <div class="project-info"></div>
             </a>
 
         </div>
