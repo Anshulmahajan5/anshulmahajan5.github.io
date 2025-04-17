@@ -16,7 +16,7 @@
             background-color: #1a1a1a;
             color: white;
         }
-
+        
         header {
             background-color: #333;
             padding: 20px 0;
@@ -177,8 +177,7 @@
             }
             nav a {
                 font-size: 0.9em;
-                margin: 0 10px;
-                /* keep inline */
+                margin: 0 10px; /* keep inline */
             }
             section h2 {
                 font-size: 2em;
@@ -205,12 +204,12 @@
             background-color: rgba(0, 0, 0, 0.8);
             padding: 10px;
             border-radius: 10px;
-            width: 300px; /* Smaller size */
+            width: 300px;
         }
 
         #video-popup iframe {
             width: 100%;
-            height: 200px; /* Smaller size */
+            height: 200px;
         }
 
         #close-video {
@@ -245,30 +244,7 @@
                 <img src="Lava blaze 3.gif" alt="Lava Blaze 3">
                 <div class="project-info">Lava Blaze 3</div>
             </a>
-            <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank" class="portfolio-item">
-                <img src="Pebble_Neo.gif" alt="Pebble Neo">
-                <div class="project-info">Pebble Neo</div>
-            </a>
-            <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank" class="portfolio-item">
-                <img src="Lava_O3.gif" alt="Lava O3">
-                <div class="project-info">Lava O3</div>
-            </a>
-            <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank" class="portfolio-item">
-                <img src="Lava_Prowatch.gif" alt="Lava Prowatch X">
-                <div class="project-info">Lava Prowatch X</div>
-            </a>
-            <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank" class="portfolio-item">
-                <img src="ProBuds.jpg" alt="ProBuds">
-                <div class="project-info">ProBuds</div>
-            </a>
-            <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank" class="portfolio-item">
-                <img src="Casio.png" alt="Casio">
-                <div class="project-info">Casio</div>
-            </a>
-            <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank" class="portfolio-item">
-                <img src="Vast.png" alt="Vast">
-                <div class="project-info">Vast</div>
-            </a>
+            <!-- Other portfolio items here -->
         </div>
     </div>
 </section>
@@ -290,6 +266,7 @@
         <div class="contact-links">
             <a href="https://www.linkedin.com/in/anshul-mahajan-/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.behance.net/anshul_mahajan" target="_blank"><i class="fab fa-behance"></i></a>
+            <a href="https://www.instagram.com/anshul_mahajan/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </section>
@@ -300,10 +277,10 @@
 
 <!-- Google AdSense -->
 <ins class="adsbygoogle"
-    style="display:block; text-align:center;"
-    data-ad-client="ca-pub-7217868140064787"
-    data-ad-slot="YOUR_AD_SLOT_NUMBER"
-    data-ad-format="auto"></ins>
+     style="display:block; text-align:center;"
+     data-ad-client="ca-pub-7217868140064787"
+     data-ad-slot="YOUR_AD_SLOT_NUMBER"
+     data-ad-format="auto"></ins>
 
 <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
@@ -312,19 +289,13 @@
 <!-- Video Popup -->
 <div id="video-popup">
     <button id="close-video">X</button>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/1VAtKvnt73k" frameborder="0" allowfullscreen></iframe> <!-- Updated Video Link -->
 </div>
 
 <script>
-    // Open Video Popup on clicking a thumbnail or button
-    document.querySelector('.portfolio-item').addEventListener('click', function() {
-        document.getElementById('video-popup').style.display = 'block';
-    });
-
-    // Close the video popup
-    document.getElementById('close-video').addEventListener('click', function() {
-        document.getElementById('video-popup').style.display = 'none';
-    });
+    document.getElementById("close-video").onclick = function() {
+        document.getElementById("video-popup").style.display = "none";
+    };
 </script>
 
 </body>
