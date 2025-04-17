@@ -10,6 +10,7 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #1a1a1a;
     color: white;
+    scroll-behavior: smooth;
 }
 
 /* Header Styling */
@@ -34,6 +35,49 @@ nav a {
     margin: 0 15px;
     text-decoration: none;
     font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    background: url('path/to/hero-image.jpg') no-repeat center center/cover;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    background-color: #ff66b2;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #ff3399;
 }
 
 /* Container for sections */
@@ -58,7 +102,7 @@ section h2 {
 /* Portfolio Section */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
     margin-top: 30px;
 }
@@ -68,11 +112,12 @@ section h2 {
     overflow: hidden;
     position: relative;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .portfolio-item img {
@@ -108,6 +153,7 @@ section h2 {
     text-decoration: none;
     margin: 0 20px;
     font-size: 1.5em;
+    transition: color 0.3s ease;
 }
 
 .contact-links a:hover {
