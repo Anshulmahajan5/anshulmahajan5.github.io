@@ -193,21 +193,23 @@
             }
         }
 
-        /* Video Popup */
+        /* Video Popup (Right Side) */
         #video-popup {
             display: none;
             position: fixed;
-            bottom: 10px;
-            left: 10px;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
             z-index: 9999;
             background-color: rgba(0, 0, 0, 0.8);
             padding: 10px;
             border-radius: 10px;
+            width: 300px; /* Smaller size */
         }
 
         #video-popup iframe {
-            width: 300px;
-            height: 200px;
+            width: 100%;
+            height: 200px; /* Smaller size */
         }
 
         #close-video {
@@ -299,15 +301,21 @@
 <!-- Video Popup Section -->
 <div id="video-popup">
     <button id="close-video">X</button>
-    <iframe width="300" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-<!-- Open Video Button (Optional for your choice) -->
+<!-- Scroll Event to Show Video -->
 <script>
-    // Open video popup (you can trigger this on specific actions, like clicking a button)
-    setTimeout(function() {
-        document.getElementById("video-popup").style.display = "block";
-    }, 2000);  // 2 seconds after page load (adjust as needed)
+    // Scroll event to show video popup when "About Me" is in view
+    window.addEventListener('scroll', function() {
+        const aboutSection = document.getElementById('about');
+        const videoPopup = document.getElementById('video-popup');
+        
+        const aboutRect = aboutSection.getBoundingClientRect();
+        if (aboutRect.top <= window.innerHeight && aboutRect.bottom >= 0) {
+            videoPopup.style.display = "block";
+        }
+    });
 
     // Close video popup
     document.getElementById("close-video").addEventListener("click", function() {
