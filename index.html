@@ -149,6 +149,47 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Responsive: Tablet */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            nav a {
+                font-size: 1em;
+                margin: 0 10px;
+            }
+            .container {
+                width: 90%;
+            }
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Responsive: Mobile */
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            nav a {
+                display: block;
+                margin: 10px 0;
+                font-size: 0.9em;
+            }
+            section h2 {
+                font-size: 2em;
+            }
+            .container {
+                width: 95%;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            #about p, #contact p {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
