@@ -1,0 +1,140 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anshul Mahajan | 3D Product Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {font-family:'Poppins',sans-serif;margin:0;padding:0;background:#1a1a1a;color:#fff;}
+    header {background:#333;padding:20px 0;text-align:center;}
+    header h1 {font-size:2.5em;margin:0;}
+    nav {margin-top:10px;}
+    nav a {color:#ff66b2;margin:0 15px;text-decoration:none;font-size:1.1em;display:inline-block;}
+    .container {width:85%;margin:0 auto;}
+    section {padding:60px 0;}
+    section h2 {font-size:2.5em;margin-bottom:20px;color:#ff66b2;text-align:center;font-weight:bold;}
+    .portfolio-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:30px;}
+    .portfolio-item {border-radius:15px;overflow:hidden;position:relative;box-shadow:0 4px 6px rgba(0,0,0,0.3);transition:transform .3s;}
+    .portfolio-item:hover {transform:scale(1.05);}
+    .portfolio-item img {width:100%;height:100%;object-fit:cover;}
+    .project-info {position:absolute;bottom:20px;left:20px;color:#fff;font-size:1.5em;opacity:0;transition:opacity .3s;}
+    .portfolio-item:hover .project-info {opacity:1;}
+    /* Modal Video */
+    .modal {position:fixed;bottom:20px;left:20px;width:300px;height:170px;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 4px 10px rgba(0,0,0,0.7);}
+    .modal video {width:100%;height:100%;object-fit:cover;}
+    .modal .close-btn {position:absolute;top:5px;right:8px;color:#fff;font-size:1.2em;cursor:pointer;}
+    /* About & Contact */
+    #about,#contact {text-align:center;background:#222;padding:60px 0;}
+    #about p,#contact p {font-size:1.1em;line-height:1.5em;color:#ccc;max-width:800px;margin:0 auto;}
+    .contact-links {margin-top:20px;}
+    .contact-links a {color:#ff66b2;margin:0 20px;font-size:1.5em;text-decoration:none;display:inline-block;transition:color .3s;}
+    .contact-links a:hover {color:#fff;}
+    .email-link {background:#ff66b2;padding:10px 30px;border-radius:30px;color:#fff;font-size:1.1em;text-decoration:none;display:inline-block;margin-top:20px;}
+    footer {text-align:center;padding:20px;background:#333;color:#aaa;}
+    html {scroll-behavior:smooth;}
+    /* Responsive */
+    @media (max-width:768px) { .portfolio-grid {grid-template-columns:repeat(2,1fr);} nav a {margin:0 10px;} }
+    @media (max-width:480px) { .portfolio-grid {grid-template-columns:1fr;} header h1 {font-size:1.8em;} nav a {font-size:.9em;margin:0 8px;} }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Anshul Mahajan</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="categories.html">Categories</a>
+    <a href="#about">About Me</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="portfolio">
+  <div class="container">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <!-- Portfolio items here -->
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2>About Me</h2>
+    <p>I am an experienced 3D Product Video Specialist and Motion Designer with expertise in creating visually stunning, high-impact content. My proficiency spans Blender, Cinema 4D, Unreal Engine, and other leading tools.</p>
+    <p>I specialize in crafting cinematic 3D product advertisements and visual storytelling. At Takila Designs, I deliver high-quality, 15–45 second 3D product videos that showcase product features with intricate details, driven by meticulous lighting and realism.</p>
+    <p>My aim is to produce visual content that is not only beautiful but also deeply engaging.</p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>If you want to work together or have a project in mind, feel free to get in touch.</p>
+    <p><a href="mailto:anshulmahajan752@gmail.com" class="email-link">Send me an Email</a></p>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/anshul-mahajan-/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://www.behance.net/anshul_mahajan" target="_blank"><i class="fab fa-behance"></i></a>
+      <a href="https://www.instagram.com/anshul_3d/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</section>
+
+<div class="modal" id="videoModal">
+  <span class="close-btn" onclick="document.getElementById('videoModal').style.display='none'">&times;</span>
+  <video src="wip.mp4" autoplay loop muted></video>
+</div>
+
+<footer>
+  <p>&copy; 2025 Anshul Mahajan. All rights reserved.</p>
+</footer>
+</body>
+</html>
+
+
+<!-- categories.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories | Anshul Mahajan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {font-family:'Poppins',sans-serif;background:#1a1a1a;color:#fff;margin:0;padding:0;}
+    header {background:#333;padding:20px 0;text-align:center;position:relative;}
+    header h1 {font-size:2em;margin:0;color:#ff66b2;}
+    nav {margin-top:10px;}
+    nav a {color:#fff;margin:0 15px;text-decoration:none;font-size:1em;transition:color .3s;}
+    nav a.active, nav a:hover {color:#ff66b2;}
+    .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;padding:40px;}
+    .card {background:#222;padding:20px;border-radius:10px;text-align:center;transition:transform .3s,background .3s;}
+    .card:hover {background:#2a2a2a;transform:translateY(-5px);}    
+    .card a {color:#ff66b2;text-decoration:none;font-size:1.2em;}
+    @media (max-width:600px) {.grid {grid-template-columns:1fr;}}  
+    footer {text-align:center;padding:20px;background:#333;color:#aaa;}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Categories</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="categories.html" class="active">Categories</a>
+    <a href="index.html#about">About Me</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+<div class="grid">
+  <div class="card"><a href="phone.html">Phones</a></div>
+  <div class="card"><a href="watches.html">Watches</a></div>
+  <div class="card"><a href="earbuds.html">Earbuds</a></div>
+</div>
+<footer>
+  <p>&copy; 2025 Anshul Mahajan. All rights reserved.</p>
+</footer>
+</body>
+</html>
