@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <style>
-        /* Global Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -23,7 +22,7 @@
         }
 
         header h1 {
-            font-size: 2em;  /* Smaller header font */
+            font-size: 2em;
             margin: 0;
         }
 
@@ -35,28 +34,26 @@
             color: #ff66b2;
             margin: 0 15px;
             text-decoration: none;
-            font-size: 1.1em;  /* Slightly smaller nav links */
+            font-size: 1.1em;
         }
 
-        /* Portfolio Section */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ff66b2;
+            font-weight: bold;
+        }
+
         .container {
             width: 85%;
             margin: 0 auto;
         }
 
-        section {
-            padding: 60px 0;
-        }
-
-        section h2 {
-            font-size: 2.2em;  /* Slightly smaller section heading */
-            margin-bottom: 20px;
-            color: #ff66b2;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -70,16 +67,18 @@
             position: relative;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             transition: transform 0.3s ease;
-        }
-
-        .portfolio-item:hover {
-            transform: scale(1.05);
+            display: block;
         }
 
         .portfolio-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
         }
 
         .project-info {
@@ -87,33 +86,34 @@
             bottom: 20px;
             left: 20px;
             color: white;
-            font-size: 1.2em;  /* Smaller font size for project info */
+            font-size: 1em;
             text-align: left;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
-        /* Hover Effect for Project Name */
         .portfolio-item:hover .project-info {
             opacity: 1;
         }
 
-        /* About Section */
-        #about, #contact {
-            background-color: #222;
+        #about p, #contact p {
+            font-size: 0.95em;
+            line-height: 1.6em;
+            color: #ccc;
+            text-align: center;
+            max-width: 700px;
+            margin: 10px auto;
         }
 
-        #about p, #contact p {
-            font-size: 1em;  /* Smaller text for paragraphs */
-            line-height: 1.5em;
-            color: #ccc;
+        .contact-links {
+            margin-top: 15px;
         }
 
         .contact-links a {
             color: #ff66b2;
             text-decoration: none;
             margin: 0 20px;
-            font-size: 1.3em;  /* Slightly smaller social links */
+            font-size: 1.2em;
         }
 
         .contact-links a:hover {
@@ -125,17 +125,19 @@
             padding: 10px 30px;
             border-radius: 30px;
             color: white;
-            font-size: 1.1em;  /* Slightly smaller email button font */
+            font-size: 1em;
             text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
         }
 
-        /* Footer Section */
         footer {
             text-align: center;
             padding: 20px 0;
             background-color: #333;
             color: #aaa;
         }
+
     </style>
 </head>
 <body>
