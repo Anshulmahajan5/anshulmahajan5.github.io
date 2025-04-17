@@ -38,7 +38,7 @@
             font-size: 1.1em;
         }
 
-        /* Portfolio Section */
+        /* Section Container */
         .container {
             width: 85%;
             margin: 0 auto;
@@ -69,7 +69,11 @@
             overflow: hidden;
             position: relative;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: scale(1.05);
         }
 
         .portfolio-item img {
@@ -78,27 +82,23 @@
             object-fit: cover;
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-5px) scale(1.03);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-        }
-
-        /* Text on Hover */
-        .portfolio-item .project-info {
-            display: none;
-        }
-
-        .portfolio-item:hover .project-info {
-            display: block;
+        .project-info {
             position: absolute;
             bottom: 20px;
             left: 20px;
             color: white;
             font-size: 1.5em;
             text-align: left;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        /* About Section */
+        /* Hover Effect for Project Name */
+        .portfolio-item:hover .project-info {
+            opacity: 1;
+        }
+
+        /* About & Contact Sections */
         #about, #contact {
             background-color: #222;
             text-align: center;
@@ -108,8 +108,12 @@
             font-size: 1.1em;
             line-height: 1.5em;
             color: #ccc;
+            max-width: 800px;
             margin: 0 auto;
-            max-width: 800px; /* Max width for better readability */
+        }
+
+        .contact-links {
+            margin-top: 20px;
         }
 
         .contact-links a {
@@ -130,6 +134,8 @@
             color: white;
             font-size: 1.1em;
             text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
         }
 
         /* Footer Section */
@@ -160,42 +166,34 @@
     <div class="container">
         <h2>Portfolio</h2>
         <div class="portfolio-grid">
-
             <a href="https://www.behance.net/gallery/223759049/Lava-Blaze-3-5G-Sleek-Design-Powerful-Presence" target="_blank" class="portfolio-item">
                 <img src="Lava blaze 3.gif" alt="Lava Blaze 3">
                 <div class="project-info">Lava Blaze 3</div>
             </a>
-
             <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank" class="portfolio-item">
                 <img src="Pebble_Neo.gif" alt="Pebble Neo">
                 <div class="project-info">Pebble Neo</div>
             </a>
-
             <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank" class="portfolio-item">
                 <img src="Lava_O3.gif" alt="Lava O3">
                 <div class="project-info">Lava O3</div>
             </a>
-
             <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank" class="portfolio-item">
                 <img src="Lava_Prowatch.gif" alt="Lava Prowatch X">
                 <div class="project-info">Lava Prowatch X</div>
             </a>
-
             <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank" class="portfolio-item">
                 <img src="ProBuds.jpg" alt="ProBuds">
                 <div class="project-info">ProBuds</div>
             </a>
-
             <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank" class="portfolio-item">
                 <img src="Casio.png" alt="Casio">
                 <div class="project-info">Casio</div>
             </a>
-
             <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank" class="portfolio-item">
                 <img src="Vast.png" alt="Vast">
                 <div class="project-info">Vast</div>
             </a>
-
         </div>
     </div>
 </section>
@@ -203,15 +201,16 @@
 <section id="about">
     <div class="container">
         <h2>About Me</h2>
-        <p>I am a 3D Product Video Specialist and Motion Designer, crafting cinematic 3D product videos and visual stories that captivate and convert. With proficiency in Blender, Cinema 4D, Unreal Engine, and more, I specialize in high-impact, visually stunning content.</p>
-        <p>At Takila Designs, I deliver 15–45 second 3D product videos that showcase features with intricate details, driven by realistic lighting and a focus on immersion. My goal is to create engaging content that doesn’t just look good but connects with the audience.</p>
+        <p>I am an experienced 3D Product Video Specialist and Motion Designer with expertise in creating visually stunning, high-impact content. My proficiency spans Blender, Cinema 4D, Unreal Engine, and other leading tools.</p>
+        <p>I specialize in crafting cinematic 3D product advertisements and visual storytelling. At Takila Designs, I deliver high-quality, 15–45 second 3D product videos that showcase product features with intricate details, driven by meticulous lighting and realism.</p>
+        <p>My aim is to produce visual content that is not only beautiful but also deeply engaging.</p>
     </div>
 </section>
 
 <section id="contact">
     <div class="container">
         <h2>Contact</h2>
-        <p>Let’s bring your product to life — reach out, and let’s create something exceptional.</p>
+        <p>If you want to work together or have a project in mind, feel free to get in touch.</p>
         <p><a href="mailto:anshulmahajan752@gmail.com" class="email-link">Send me an Email</a></p>
         <div class="contact-links">
             <a href="https://www.linkedin.com/in/anshul-mahajan-/" target="_blank"><i class="fab fa-linkedin"></i></a>
