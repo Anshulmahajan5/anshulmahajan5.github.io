@@ -221,12 +221,11 @@
             border-radius: 50%;
             font-size: 1.2em;
             cursor: pointer;
-        }
-
-        /* AdSense */
-        .adsense {
-            margin: 20px 0;
-            text-align: center;
+            width: 25px; /* Ensure it's a perfect circle */
+            height: 25px; /* Ensure it's a perfect circle */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
@@ -246,31 +245,31 @@
         <h2>Portfolio</h2>
         <div class="portfolio-grid">
             <a href="https://www.behance.net/gallery/223759049/Lava-Blaze-3-5G-Sleek-Design-Powerful-Presence" target="_blank" class="portfolio-item">
-                <img src="Lava blaze 3.gif" alt="Lava Blaze 3">
+                <img src="Lava blaze 3.gif" alt="Lava Blaze 3" loading="lazy">
                 <div class="project-info">Lava Blaze 3</div>
             </a>
             <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank" class="portfolio-item">
-                <img src="Pebble_Neo.gif" alt="Pebble Neo">
+                <img src="Pebble_Neo.gif" alt="Pebble Neo" loading="lazy">
                 <div class="project-info">Pebble Neo</div>
             </a>
             <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank" class="portfolio-item">
-                <img src="Lava_O3.gif" alt="Lava O3">
+                <img src="Lava_O3.gif" alt="Lava O3" loading="lazy">
                 <div class="project-info">Lava O3</div>
             </a>
             <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank" class="portfolio-item">
-                <img src="Lava_Prowatch.gif" alt="Lava Prowatch X">
+                <img src="Lava_Prowatch.gif" alt="Lava Prowatch X" loading="lazy">
                 <div class="project-info">Lava Prowatch X</div>
             </a>
             <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank" class="portfolio-item">
-                <img src="ProBuds.jpg" alt="ProBuds">
+                <img src="ProBuds.jpg" alt="ProBuds" loading="lazy">
                 <div class="project-info">ProBuds</div>
             </a>
             <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank" class="portfolio-item">
-                <img src="Casio.png" alt="Casio">
+                <img src="Casio.png" alt="Casio" loading="lazy">
                 <div class="project-info">Casio</div>
             </a>
             <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank" class="portfolio-item">
-                <img src="Vast.png" alt="Vast">
+                <img src="Vast.png" alt="Vast" loading="lazy">
                 <div class="project-info">Vast</div>
             </a>
         </div>
@@ -302,22 +301,6 @@
     <p>&copy; 2025 Anshul Mahajan. All Rights Reserved.</p>
 </footer>
 
-<!-- AdSense Script -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7217868140064787" crossorigin="anonymous"></script>
-
-<!-- AdSense Ad Placeholder -->
-<div class="adsense">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-7217868140064787"
-         data-ad-slot="1234567890"
-         data-ad-format="auto"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
-
-<!-- Video Popup Section -->
 <div id="video-popup">
     <button id="close-video">X</button>
     <video id="video-player" width="100%" height="200" controls>
@@ -326,25 +309,38 @@
     </video>
 </div>
 
-<!-- Scroll Event to Show Video -->
 <script>
+    const aboutSection = document.getElementById('about');
+    const videoPopup = document.getElementById('video-popup');
+    const videoPlayer = document.getElementById('video-player');
+    const closeVideoButton = document.getElementById('close-video');
+
+    // Flag to track if the video popup has been explicitly closed by the user
+    let videoPopupClosedByUser = false;
+
     // Scroll event to show video popup when "About Me" is in view
     window.addEventListener('scroll', function() {
-        const aboutSection = document.getElementById('about');
-        const videoPopup = document.getElementById('video-popup');
-        
+        if (videoPopupClosedByUser) {
+            return; // If user already closed it, do nothing
+        }
+
         const aboutRect = aboutSection.getBoundingClientRect();
-        if (aboutRect.top <= window.innerHeight && aboutRect.bottom >= 0) {
+        // Check if the top of the about section is within 75% of the viewport height (from top) AND
+        // the bottom of the about section is still within 25% of the viewport height (from bottom)
+        // This makes it less sensitive to just barely entering the view
+        if (aboutRect.top <= window.innerHeight * 0.75 && aboutRect.bottom >= window.innerHeight * 0.25) {
             videoPopup.style.display = "block";
+            // Optional: Auto-play the video when it appears
+            // videoPlayer.play();
         }
     });
 
     // Close video popup and pause the video
-    document.getElementById("close-video").addEventListener("click", function() {
-        const videoPlayer = document.getElementById("video-player");
+    closeVideoButton.addEventListener("click", function() {
         videoPlayer.pause(); // Pause the video
         videoPlayer.currentTime = 0; // Reset video to the beginning
-        document.getElementById("video-popup").style.display = "none"; // Hide the video popup
+        videoPopup.style.display = "none"; // Hide the video popup
+        videoPopupClosedByUser = true; // Set the flag to true
     });
 </script>
 
