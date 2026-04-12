@@ -1,347 +1,950 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshul Mahajan | 3D Product Specialist</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            color: white;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anshul Mahajan — 3D Product Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111;
+    --bg3: #161616;
+    --accent: #e8ff47;
+    --accent2: #ff4747;
+    --text: #f0ede6;
+    --muted: #666;
+    --border: rgba(255,255,255,0.07);
+    --card-h: 340px;
+  }
 
-        header {
-            background-color: #333;
-            padding: 20px 0;
-            text-align: center;
-        }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-        }
+  html { scroll-behavior: smooth; }
 
-        nav {
-            margin-top: 10px;
-        }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    cursor: none;
+  }
 
-        nav a {
-            color: #ff66b2;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.1em;
-            display: inline-block;
-        }
+  /* CUSTOM CURSOR */
+  .cursor {
+    position: fixed;
+    width: 12px; height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
+    mix-blend-mode: difference;
+  }
+  .cursor-ring {
+    position: fixed;
+    width: 40px; height: 40px;
+    border: 1px solid rgba(232,255,71,0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.25s ease, width 0.3s ease, height 0.3s ease;
+  }
+  body:hover .cursor { opacity: 1; }
 
-        /* Section Container */
-        .container {
-            width: 85%;
-            margin: 0 auto;
-        }
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9997;
+    opacity: 0.5;
+  }
 
-        section {
-            padding: 60px 0;
-        }
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 60px;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%);
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s, background 0.3s;
+  }
+  nav.scrolled {
+    backdrop-filter: blur(20px);
+    background: rgba(10,10,10,0.85);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; left: 0;
+    width: 0; height: 1px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-links a:hover::after { width: 100%; }
+  .nav-cta {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 10px 24px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: #fff; transform: translateY(-1px); }
 
-        section h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #ff66b2;
-            text-align: center;
-            font-weight: bold;
-        }
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 60px 80px;
+    position: relative;
+    overflow: hidden;
+  }
 
-        /* Portfolio Grid */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 70% 30%, rgba(232,255,71,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 50% at 20% 80%, rgba(255,71,71,0.04) 0%, transparent 50%);
+  }
 
-        .portfolio-item {
-            border-radius: 15px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
+  .hero-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
 
-        .portfolio-item:hover {
-            transform: scale(1.05);
-        }
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px; height: 1px;
+    background: var(--accent);
+  }
 
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 12vw, 13rem);
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 40px;
+  }
+  .hero-title .line-accent { color: var(--accent); }
+  .hero-title .line-outline {
+    -webkit-text-stroke: 1px rgba(240,237,230,0.25);
+    color: transparent;
+  }
 
-        .project-info {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: white;
-            font-size: 1.5em;
-            text-align: left;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+  .hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 400px;
+    font-weight: 300;
+  }
+  .hero-desc strong { color: var(--text); font-weight: 400; }
 
-        /* Hover Effect for Project Name */
-        .portfolio-item:hover .project-info {
-            opacity: 1;
-        }
+  .hero-stats {
+    display: flex;
+    gap: 48px;
+  }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 4px;
+  }
 
-        /* About & Contact Sections */
-        #about, #contact {
-            background-color: #222;
-            text-align: center;
-        }
+  .scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, var(--muted), transparent);
+    animation: scrollDown 1.5s ease-in-out infinite;
+  }
+  @keyframes scrollDown {
+    0% { transform: scaleY(1); transform-origin: top; }
+    50% { transform: scaleY(0.3); transform-origin: top; }
+    51% { transform: scaleY(0.3); transform-origin: bottom; }
+    100% { transform: scaleY(1); transform-origin: bottom; }
+  }
 
-        #about p, #contact p {
-            font-size: 1.1em;
-            line-height: 1.5em;
-            color: #ccc;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+  /* MARQUEE TICKER */
+  .ticker {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    background: var(--bg2);
+  }
+  .ticker-inner {
+    display: flex;
+    gap: 0;
+    white-space: nowrap;
+    animation: ticker 20s linear infinite;
+    width: max-content;
+  }
+  .ticker-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .ticker-item span { color: var(--accent); font-size: 1.2rem; }
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
 
-        .contact-links {
-            margin-top: 20px;
-        }
+  /* WORK SECTION */
+  #work {
+    padding: 120px 60px;
+  }
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 64px;
+  }
+  .section-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+  }
+  .section-count {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+  }
 
-        .contact-links a {
-            color: #ff66b2;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.5em;
-            display: inline-block;
-        }
+  /* PORTFOLIO GRID — Bento style */
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto;
+    gap: 12px;
+  }
 
-        .contact-links a:hover {
-            color: #fff;
-        }
+  .bento-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    cursor: none;
+    display: block;
+    text-decoration: none;
+  }
 
-        .email-link {
-            background-color: #ff66b2;
-            padding: 10px 30px;
-            border-radius: 30px;
-            color: white;
-            font-size: 1.1em;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
+  .bento-item:nth-child(1) { grid-column: span 7; }
+  .bento-item:nth-child(2) { grid-column: span 5; }
+  .bento-item:nth-child(3) { grid-column: span 4; }
+  .bento-item:nth-child(4) { grid-column: span 4; }
+  .bento-item:nth-child(5) { grid-column: span 4; }
+  .bento-item:nth-child(6) { grid-column: span 6; }
+  .bento-item:nth-child(7) { grid-column: span 6; }
 
-        /* Footer Section */
-        footer {
-            text-align: center;
-            padding: 20px 0;
-            background-color: #333;
-            color: #aaa;
-        }
+  .bento-item .media {
+    width: 100%;
+    height: var(--card-h);
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    filter: saturate(0.8);
+  }
+  .bento-item:hover .media {
+    transform: scale(1.06);
+    filter: saturate(1.1);
+  }
 
-        html {
-            scroll-behavior: smooth;
-        }
+  .bento-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+  }
+  .bento-item:hover .bento-overlay { opacity: 1; }
 
-        /* Responsive: Tablet */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            nav a {
-                font-size: 1em;
-                margin: 0 10px;
-            }
-            .container {
-                width: 90%;
-            }
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+  .bento-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .bento-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: #fff;
+  }
+  .bento-arrow {
+    position: absolute;
+    top: 20px; right: 20px;
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0) rotate(-45deg);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: var(--bg);
+    font-size: 0.8rem;
+  }
+  .bento-item:hover .bento-arrow {
+    transform: scale(1) rotate(0deg);
+  }
 
-        /* Responsive: Mobile */
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8em;
-            }
-            nav a {
-                font-size: 0.9em;
-                margin: 0 10px;
-            }
-            section h2 {
-                font-size: 2em;
-            }
-            .container {
-                width: 95%;
-            }
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            #about p, #contact p {
-                font-size: 1em;
-            }
-        }
+  /* ABOUT */
+  #about {
+    padding: 120px 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    border-top: 1px solid var(--border);
+  }
 
-        /* Video Popup (Right Side) */
-        #video-popup {
-            display: none;
-            position: fixed;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 9999;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 10px;
-            width: 300px; /* Smaller size */
-        }
+  .about-left .label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .about-left h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 0.95;
+    margin-bottom: 32px;
+  }
+  .about-left p {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+  .about-left p strong { color: var(--text); font-weight: 400; }
 
-        #video-popup iframe {
-            width: 100%;
-            height: 200px; /* Smaller size */
-        }
+  .tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  .tool-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .tool-tag:hover { border-color: var(--accent); color: var(--accent); }
 
-        #close-video {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background-color: #ff66b2;
-            border: none;
-            color: white;
-            border-radius: 50%;
-            font-size: 1.2em;
-            cursor: pointer;
-            width: 25px; /* Ensure it's a perfect circle */
-            height: 25px; /* Ensure it's a perfect circle */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
+  .about-right {
+    position: relative;
+  }
+  .about-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(232,255,71,0.08), transparent 70%);
+  }
+  .about-card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 32px;
+    text-transform: uppercase;
+  }
+  .service-item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    transition: padding-left 0.3s ease;
+  }
+  .service-item:last-child { border-bottom: none; }
+  .service-item:hover { padding-left: 12px; }
+  .service-name {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+  .service-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.15);
+    letter-spacing: 0.1em;
+  }
+
+  /* CONTACT */
+  #contact {
+    padding: 120px 60px;
+    border-top: 1px solid var(--border);
+    background: var(--bg2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #contact::before {
+    content: 'LET\'S TALK';
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20vw;
+    color: rgba(255,255,255,0.02);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .contact-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .contact-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 8vw, 8rem);
+    line-height: 0.9;
+    margin-bottom: 48px;
+  }
+  .email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--accent);
+    color: var(--bg);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    transition: background 0.2s, transform 0.2s, gap 0.2s;
+  }
+  .email-btn:hover { background: #fff; gap: 20px; transform: translateY(-2px); }
+  .social-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 64px;
+  }
+  .social-link {
+    width: 48px; height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s;
+  }
+  .social-link:hover {
+    border-color: var(--accent);
+    color: var(--bg);
+    background: var(--accent);
+    transform: translateY(-4px);
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 32px 60px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg);
+  }
+  footer p { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; }
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+  }
+  .footer-logo span { color: var(--accent); }
+
+  /* VIDEO POPUP */
+  #video-popup {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9990;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    width: 320px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  .popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .popup-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  #close-video {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: none;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 4px;
+    transition: color 0.2s;
+  }
+  #close-video:hover { color: var(--text); }
+  #video-popup video { width: 100%; height: 200px; display: block; background: #000; }
+
+  /* REVEAL ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /* MOBILE */
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    .nav-links, .nav-cta { display: none; }
+    #hero { padding: 0 24px 60px; }
+    .hero-title { font-size: clamp(4rem, 15vw, 6rem); }
+    .hero-bottom { flex-direction: column; align-items: flex-start; }
+    .hero-stats { gap: 32px; }
+    #work { padding: 80px 24px; }
+    .bento-grid { grid-template-columns: 1fr; }
+    .bento-item:nth-child(n) { grid-column: span 1 !important; }
+    .bento-overlay { opacity: 1; }
+    #about { padding: 80px 24px; grid-template-columns: 1fr; gap: 40px; }
+    #contact { padding: 80px 24px; }
+    footer { padding: 24px; flex-direction: column; gap: 16px; text-align: center; }
+    .scroll-hint { display: none; }
+  }
+</style>
 </head>
 <body>
 
-<header>
-    <h1>Anshul Mahajan</h1>
-    <nav>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About Me</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
-<section id="portfolio">
-    <div class="container">
-        <h2>Portfolio</h2>
-        <div class="portfolio-grid">
-            <a href="https://www.behance.net/gallery/223759049/Lava-Blaze-3-5G-Sleek-Design-Powerful-Presence" target="_blank" class="portfolio-item">
-                <img src="Lava blaze 3.gif" alt="Lava Blaze 3" loading="lazy">
-                <div class="project-info">Lava Blaze 3</div>
-            </a>
-            <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank" class="portfolio-item">
-                <img src="Pebble_Neo.gif" alt="Pebble Neo" loading="lazy">
-                <div class="project-info">Pebble Neo</div>
-            </a>
-            <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank" class="portfolio-item">
-                <img src="Lava_O3.gif" alt="Lava O3" loading="lazy">
-                <div class="project-info">Lava O3</div>
-            </a>
-            <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank" class="portfolio-item">
-                <img src="Lava_Prowatch.gif" alt="Lava Prowatch X" loading="lazy">
-                <div class="project-info">Lava Prowatch X</div>
-            </a>
-            <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank" class="portfolio-item">
-                <img src="ProBuds.jpg" alt="ProBuds" loading="lazy">
-                <div class="project-info">ProBuds</div>
-            </a>
-            <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank" class="portfolio-item">
-                <img src="Casio.png" alt="Casio" loading="lazy">
-                <div class="project-info">Casio</div>
-            </a>
-            <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank" class="portfolio-item">
-                <img src="Vast.png" alt="Vast" loading="lazy">
-                <div class="project-info">Vast</div>
-            </a>
-        </div>
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">AM<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:anshulmahajan752@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-eyebrow reveal">3D Product Specialist & Motion Designer</div>
+
+  <h1 class="hero-title reveal reveal-delay-1">
+    <span class="line-accent">Anshul</span><br>
+    <span class="line-outline">Maha</span><span>jan</span>
+  </h1>
+
+  <div class="hero-bottom reveal reveal-delay-2">
+    <p class="hero-desc">
+      Crafting <strong>cinematic 3D product ads</strong> that captivate and convert. Blender · Cinema 4D · Unreal Engine · Motion Design.
+    </p>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">7+</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div>
+        <div class="stat-num">3+</div>
+        <div class="stat-label">Years XP</div>
+      </div>
+      <div>
+        <div class="stat-num">∞</div>
+        <div class="stat-label">Ideas</div>
+      </div>
     </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner" id="ticker">
+    <span class="ticker-item">Blender <span>✦</span></span>
+    <span class="ticker-item">Cinema 4D <span>✦</span></span>
+    <span class="ticker-item">Unreal Engine <span>✦</span></span>
+    <span class="ticker-item">3D Product Ads <span>✦</span></span>
+    <span class="ticker-item">Motion Design <span>✦</span></span>
+    <span class="ticker-item">Visual Storytelling <span>✦</span></span>
+    <span class="ticker-item">Product Visualization <span>✦</span></span>
+    <span class="ticker-item">Blender <span>✦</span></span>
+    <span class="ticker-item">Cinema 4D <span>✦</span></span>
+    <span class="ticker-item">Unreal Engine <span>✦</span></span>
+    <span class="ticker-item">3D Product Ads <span>✦</span></span>
+    <span class="ticker-item">Motion Design <span>✦</span></span>
+    <span class="ticker-item">Visual Storytelling <span>✦</span></span>
+    <span class="ticker-item">Product Visualization <span>✦</span></span>
+  </div>
+</div>
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-header reveal">
+    <div>
+      <div class="section-tag">Selected Work</div>
+      <h2 class="section-title">Portfolio</h2>
+    </div>
+    <div class="section-count">07</div>
+  </div>
+
+  <div class="bento-grid">
+    <a href="https://www.behance.net/gallery/223759049/Lava-Blaze-3-5G-Sleek-Design-Powerful-Presence" target="_blank" class="bento-item reveal">
+      <img src="Lava blaze 3.gif" alt="Lava Blaze 3" class="media">
+      <div class="bento-overlay">
+        <div class="bento-tag">Smartphone · 3D Ad</div>
+        <div class="bento-title">Lava Blaze 3</div>
+      </div>
+      <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+
+    <a href="https://www.behance.net/gallery/220961207/Pebble-Neo-Redefining-Everyday-Elegance" target="_blank" class="bento-item reveal reveal-delay-1">
+      <img src="Pebble_Neo.gif" alt="Pebble Neo" class="media">
+      <div class="bento-overlay">
+        <div class="bento-tag">Smartwatch · Motion</div>
+        <div class="bento-title">Pebble Neo</div>
+      </div>
+      <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+
+    <a href="https://www.behance.net/gallery/221737249/Lava-O3-Redefining-Performance-and-Style" target="_blank" class="bento-item reveal">
+      <img src="Lava_O3.gif" alt="Lava O3" class="media">
+      <div class="bento-overlay">
+        <div class="bento-tag">Smartphone · Cinematic</div>
+        <div class="bento-title">Lava O3</div>
+      </div>
+      <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+
+    <a href="https://www.behance.net/gallery/217335825/Lava-Prowatch-X" target="_blank" class="bento-item reveal reveal-delay-1">
+      <img src="Lava_Prowatch.gif" alt="Lava Prowatch X" class="media">
+      <div class="bento-overlay">
+        <div class="bento-tag">Smartwatch · 3D</div>
+        <div class="bento-title">Lava Prowatch X</div>
+      </div>
+      <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+
+    <a href="https://www.behance.net/gallery/201361809/Lava-ProBuds" target="_blank" class="bento-item reveal reveal-delay-2">
+      <img src="ProBuds.jpg" alt="ProBuds" class="media">
+      <div class="bento-overlay">
+        <div class="bento-tag">Audio · Visualization</div>
+        <div class="bento-title">ProBuds</div>
+      </div>
+      <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+
+    <a href="https://www.behance.net/gallery/210212511/Casio" target="_blank" class="bento-item reveal">
+      <img src="Casio.png" alt="Casio" class="media">
+      <div class="bento-overlay">
+        <div class="bento-tag">Watch · Product 3D</div>
+        <div class="bento-title">Casio</div>
+      </div>
+      <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+
+    <a href="https://www.behance.net/gallery/197347117/VAST-Journey-to-the-Cosmos" target="_blank" class="bento-item reveal reveal-delay-1">
+      <img src="Vast.png" alt="Vast" class="media">
+      <div class="bento-overlay">
+        <div class="bento-tag">Cosmos · Visual Story</div>
+        <div class="bento-title">Vast</div>
+      </div>
+      <div class="bento-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
 <section id="about">
-    <div class="container">
-        <h2>About Me</h2>
-        <p>I’m a multidisciplinary 3D Artist and Motion Designer specializing in cinematic product visuals, real-time rendering, and immersive storytelling.</p>
-        <p>With deep expertise in tools like Blender, Cinema 4D, Unreal Engine, and After Effects, I create high-impact 3D content that blends design, motion, and realism.</p>
+  <div class="about-left reveal">
+    <div class="label">About Me</div>
+    <h2>Crafting worlds<br>in <span style="color:var(--accent)">3D</span></h2>
+    <p>
+      I'm an experienced <strong>3D Product Video Specialist</strong> and Motion Designer creating high-impact visual content that stops the scroll and tells a story.
+    </p>
+    <p>
+      I build cinematic product advertisements using Blender, Cinema 4D, and Unreal Engine — turning everyday objects into visual experiences.
+    </p>
+    <div class="tools-list">
+      <span class="tool-tag">Blender</span>
+      <span class="tool-tag">Cinema 4D</span>
+      <span class="tool-tag">Unreal Engine</span>
+      <span class="tool-tag">After Effects</span>
+      <span class="tool-tag">DaVinci Resolve</span>
+      <span class="tool-tag">Substance Painter</span>
+      <span class="tool-tag">Octane</span>
     </div>
+  </div>
+
+  <div class="about-right reveal reveal-delay-2">
+    <div class="about-card">
+      <div class="about-card-title">What I do</div>
+      <div class="service-item">
+        <span class="service-name">3D Product Advertisements</span>
+        <span class="service-num">01</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Cinematic Motion Design</span>
+        <span class="service-num">02</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Product Visualization</span>
+        <span class="service-num">03</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Visual Storytelling</span>
+        <span class="service-num">04</span>
+      </div>
+      <div class="service-item">
+        <span class="service-name">Brand Identity in 3D</span>
+        <span class="service-num">05</span>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
-    <div class="container">
-        <h2>Contact</h2>
-        <p>If you want to work together or have a project in mind, feel free to get in touch.</p>
-        <p><a href="mailto:anshulmahajan752@gmail.com" class="email-link">Send me an Email</a></p>
-        <div class="contact-links">
-            <a href="https://www.linkedin.com/in/anshul-mahajan-/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.behance.net/anshul_mahajan" target="_blank"><i class="fab fa-behance"></i></a>
-            <a href="https://www.instagram.com/anshul_3d/" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-    </div>
+  <div class="contact-eyebrow reveal">Available for Freelance</div>
+  <h2 class="contact-title reveal reveal-delay-1">Let's<br>Create.</h2>
+  <a href="mailto:anshulmahajan752@gmail.com" class="email-btn reveal reveal-delay-2">
+    Send me an email
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <div class="social-row reveal reveal-delay-3">
+    <a href="https://www.linkedin.com/in/anshul-mahajan-/" target="_blank" class="social-link" title="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://www.behance.net/anshul_mahajan" target="_blank" class="social-link" title="Behance">
+      <i class="fab fa-behance"></i>
+    </a>
+    <a href="https://www.instagram.com/anshul_3d/" target="_blank" class="social-link" title="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <p>&copy; 2025 Anshul Mahajan. All Rights Reserved.</p>
+  <div class="footer-logo">AM<span>.</span></div>
+  <p>&copy; 2025 Anshul Mahajan. All rights reserved.</p>
+  <p style="font-size:0.65rem;letter-spacing:0.05em;">3D Product Specialist</p>
 </footer>
 
+<!-- VIDEO POPUP -->
 <div id="video-popup">
-    <button id="close-video">X</button>
-    <video id="video-player" width="100%" height="200" controls>
-        <source src="https://github.com/anshulmahajan5/anshulmahajan5.github.io/raw/main/Main_Glory.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+  <div class="popup-header">
+    <span class="popup-label">Showreel Preview</span>
+    <button id="close-video"><i class="fas fa-times"></i></button>
+  </div>
+  <video id="video-player" controls>
+    <source src="https://github.com/anshulmahajan5/anshulmahajan5.github.io/raw/main/Main_Glory.mp4" type="video/mp4">
+  </video>
 </div>
 
 <script>
-    const aboutSection = document.getElementById('about');
-    const videoPopup = document.getElementById('video-popup');
-    const videoPlayer = document.getElementById('video-player');
-    const closeVideoButton = document.getElementById('close-video');
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
+  function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top = ry + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+  document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('mouseenter', () => { cursor.style.width = '6px'; cursor.style.height = '6px'; ring.style.width = '60px'; ring.style.height = '60px'; });
+    el.addEventListener('mouseleave', () => { cursor.style.width = '12px'; cursor.style.height = '12px'; ring.style.width = '40px'; ring.style.height = '40px'; });
+  });
 
-    // Flag to track if the video popup has been explicitly closed by the user
-    let videoPopupClosedByUser = false;
+  // Navbar scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  });
 
-    // Scroll event to show video popup when "About Me" is in view
-    window.addEventListener('scroll', function() {
-        if (videoPopupClosedByUser) {
-            return; // If user already closed it, do nothing
-        }
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+  // Trigger hero immediately
+  setTimeout(() => document.querySelectorAll('#hero .reveal').forEach(r => r.classList.add('visible')), 100);
 
-        const aboutRect = aboutSection.getBoundingClientRect();
-        // Check if the top of the about section is within 75% of the viewport height (from top) AND
-        // the bottom of the about section is still within 25% of the viewport height (from bottom)
-        // This makes it less sensitive to just barely entering the view
-        if (aboutRect.top <= window.innerHeight * 0.75 && aboutRect.bottom >= window.innerHeight * 0.25) {
-            videoPopup.style.display = "block";
-            // Optional: Auto-play the video when it appears
-            // videoPlayer.play();
-        }
-    });
-
-    // Close video popup and pause the video
-    closeVideoButton.addEventListener("click", function() {
-        videoPlayer.pause(); // Pause the video
-        videoPlayer.currentTime = 0; // Reset video to the beginning
-        videoPopup.style.display = "none"; // Hide the video popup
-        videoPopupClosedByUser = true; // Set the flag to true
-    });
+  // Video popup
+  let popupShown = false;
+  const aboutSection = document.getElementById('about');
+  const videoPopup = document.getElementById('video-popup');
+  window.addEventListener('scroll', () => {
+    if (popupShown) return;
+    const rect = aboutSection.getBoundingClientRect();
+    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+      videoPopup.style.display = 'block';
+      popupShown = true;
+    }
+  });
+  document.getElementById('close-video').addEventListener('click', () => {
+    const vp = document.getElementById('video-player');
+    vp.pause(); vp.currentTime = 0;
+    videoPopup.style.display = 'none';
+  });
 </script>
 
 </body>
