@@ -187,6 +187,7 @@ footer p { font-size:.75rem; color:var(--muted); letter-spacing:.05em; }
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
+<!-- NAV -->
 <nav id="navbar">
   <a href="#hero" class="nav-logo">AM<span>.</span></a>
   <ul class="nav-links">
@@ -197,6 +198,7 @@ footer p { font-size:.75rem; color:var(--muted); letter-spacing:.05em; }
   <a href="mailto:anshulmahajan752@gmail.com" class="nav-cta">Hire Me</a>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -216,6 +218,7 @@ footer p { font-size:.75rem; color:var(--muted); letter-spacing:.05em; }
   <div class="scroll-hint"><div class="scroll-line"></div><span>Scroll</span></div>
 </section>
 
+<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
     <span class="ticker-item">Blender<span class="dot">✦</span></span>
@@ -224,17 +227,16 @@ footer p { font-size:.75rem; color:var(--muted); letter-spacing:.05em; }
     <span class="ticker-item">3D Product Ads<span class="dot">✦</span></span>
     <span class="ticker-item">Motion Design<span class="dot">✦</span></span>
     <span class="ticker-item">Visual Storytelling<span class="dot">✦</span></span>
-    <span class="ticker-item">Takila Designs<span class="dot">✦</span></span>
     <span class="ticker-item">Blender<span class="dot">✦</span></span>
     <span class="ticker-item">Cinema 4D<span class="dot">✦</span></span>
     <span class="ticker-item">Unreal Engine<span class="dot">✦</span></span>
     <span class="ticker-item">3D Product Ads<span class="dot">✦</span></span>
     <span class="ticker-item">Motion Design<span class="dot">✦</span></span>
     <span class="ticker-item">Visual Storytelling<span class="dot">✦</span></span>
-    <span class="ticker-item">Takila Designs<span class="dot">✦</span></span>
   </div>
 </div>
 
+<!-- PORTFOLIO GRID -->
 <section id="work">
   <div class="section-header reveal">
     <div>
@@ -244,15 +246,18 @@ footer p { font-size:.75rem; color:var(--muted); letter-spacing:.05em; }
     <div class="section-count" id="proj-count"></div>
   </div>
   <div class="bento-grid" id="portfolio-grid">
-    </div>
+    <!-- PROJECTS_START -->
+    <!-- PROJECTS_END -->
+  </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="about-left reveal">
     <div class="about-label">About Me</div>
     <h2>Crafting worlds<br>in <span style="color:var(--accent)">3D</span></h2>
     <p>I'm an experienced <strong>3D Product Video Specialist</strong> and Motion Designer creating high-impact visual content that stops the scroll and tells a story.</p>
-    <p>Currently at <strong>Takila Designs</strong>, I build cinematic product advertisements using Blender, Cinema 4D, and Unreal Engine — turning everyday objects into visual experiences.</p>
+    <p> I build cinematic product advertisements using Blender, Cinema 4D, and Unreal Engine — turning everyday objects into visual experiences.</p>
     <div class="tools-list">
       <span class="tool-tag">Blender</span>
       <span class="tool-tag">Cinema 4D</span>
@@ -275,6 +280,7 @@ footer p { font-size:.75rem; color:var(--muted); letter-spacing:.05em; }
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="contact-eyebrow reveal">Available for Freelance</div>
   <h2 class="contact-title reveal reveal-d1">Let's<br>Create.</h2>
@@ -288,17 +294,20 @@ footer p { font-size:.75rem; color:var(--muted); letter-spacing:.05em; }
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-logo">AM<span>.</span></div>
   <p>&copy; 2025 Anshul Mahajan. All rights reserved.</p>
   <p style="font-size:.65rem;letter-spacing:.05em;">3D Product Specialist</p>
 </footer>
 
+<!-- LIGHTBOX -->
 <div id="lightbox">
   <button class="lb-close" id="lb-close"><i class="fas fa-times"></i></button>
   <div class="lb-inner" id="lb-content"></div>
 </div>
 
+<!-- VIDEO POPUP / SHOWREEL -->
 <div id="video-popup">
   <div class="popup-header">
     <span class="popup-label">Showreel Preview</span>
@@ -323,8 +332,7 @@ document.addEventListener('mousemove', e => {
   ring.style.left = rx+'px'; ring.style.top = ry+'px';
   requestAnimationFrame(animRing);
 })();
-
-// Cursor delegation for dynamic content
+// Also wire cursor scale for cards added later via delegation on the grid
 document.addEventListener('mouseover', e => {
   if (e.target.closest('a, button, .bento-item')) {
     cursor.style.width='6px'; cursor.style.height='6px';
@@ -352,9 +360,14 @@ document.querySelectorAll('.reveal').forEach(r => revealObs.observe(r));
 setTimeout(() => document.querySelectorAll('#hero .reveal').forEach(r => r.classList.add('visible')), 100);
 
 // ─── PROJECT DATA & LIGHTBOX ──────────────────────────────
+// Kept at module scope so openLightbox() — called by inline onclick
+// attributes inside the lightbox nav — can always reach them, even
+// after initProjects() runs late.
 let projectData  = [];
 let currentIndex = 0;
 
+// openLightbox is global so the inline onclick="openLightbox(n)"
+// buttons rendered inside lb-content can call it without issues.
 function openLightbox(idx) {
   if (!projectData.length) return;
   currentIndex = idx;
@@ -365,6 +378,7 @@ function openLightbox(idx) {
   document.body.style.overflow = 'hidden';
 
   const fieldTags = p.fields.map(f => `<span class="bento-field">${f}</span>`).join('');
+
   const gallery = p.images.map((src, i) =>
     `<img class="lb-image${i === 0 ? ' featured' : ''}" src="${src}" alt="${p.title}" loading="${i === 0 ? 'eager' : 'lazy'}">`
   ).join('');
@@ -391,26 +405,43 @@ function openLightbox(idx) {
         ${p.description ? `<p class="lb-desc">${p.description}</p>` : ''}
       </div>
       <div class="lb-actions">
-        ${p.behanceUrl ? `<a class="lb-btn lb-btn-primary" href="${p.behanceUrl}" target="_blank"><i class="fab fa-behance"></i> View on Behance</a>` : ''}
-        <a class="lb-btn lb-btn-secondary" href="mailto:anshulmahajan752@gmail.com?subject=Enquiry: ${encodeURIComponent(p.title)}">
+        ${p.behanceUrl
+          ? `<a class="lb-btn lb-btn-primary" href="${p.behanceUrl}" target="_blank"><i class="fab fa-behance"></i> View on Behance</a>`
+          : ''}
+        <a class="lb-btn lb-btn-secondary"
+           href="mailto:anshulmahajan752@gmail.com?subject=Interested in ${encodeURIComponent(p.title)}">
           <i class="fas fa-envelope"></i> Enquire
         </a>
       </div>
     </div>
+    ${p.year
+      ? `<div style="padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:32px;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.15em;color:var(--muted);">${p.year}</div>`
+      : ''}
     <div class="lb-images">${gallery}</div>
     <div class="lb-nav">${prev}${next}</div>`;
 
   lb.scrollTop = 0;
 }
 
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ─── INIT PROJECTS ────────────────────────────────────────
+// Called once cards are present in the DOM. Safe to call when the
+// grid is still empty — it simply does nothing and waits for the
+// MutationObserver to fire again when Python injects the cards.
 function initProjects() {
   const cards   = document.querySelectorAll('#portfolio-grid .bento-item');
   const countEl = document.getElementById('proj-count');
 
-  if (!cards.length) return;
+  if (!cards.length) return; // grid still empty — observer will retry
 
+  // Update the ghost project counter
   countEl.textContent = String(cards.length).padStart(2, '0');
 
+  // Build the data array from data-* attributes on each card
   projectData = Array.from(cards).map(card => ({
     title:       card.dataset.title       || '',
     fields:      (card.dataset.fields     || '').split(',').map(f => f.trim()).filter(Boolean),
@@ -420,37 +451,38 @@ function initProjects() {
     images:      (card.dataset.images     || '').split(',').map(s => s.trim()).filter(Boolean),
   }));
 
+  // Wire click handlers and scroll-reveal observer to every card
   cards.forEach((card, i) => {
     card.addEventListener('click', () => openLightbox(i));
     revealObs.observe(card);
   });
+
+  // Stop watching once cards are wired up
+  gridObserver.disconnect();
 }
 
-// Watcher for dynamic injection
+// ─── MUTATION OBSERVER ON THE GRID ────────────────────────
+// Watches for the Python script inserting .bento-item nodes and
+// calls initProjects() the moment they appear.
 const grid = document.getElementById('portfolio-grid');
 const gridObserver = new MutationObserver(() => initProjects());
 gridObserver.observe(grid, { childList: true, subtree: true });
 
-// Initial run
+// Also try immediately — covers the case where Python has already
+// written the cards into the HTML before this script runs.
 document.addEventListener('DOMContentLoaded', initProjects);
 
-// Lightbox UI close logic
-document.getElementById('lb-close').addEventListener('click', () => {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-});
+// ─── LIGHTBOX CLOSE HANDLERS ─────────────────────────────
+document.getElementById('lb-close').addEventListener('click', closeLightbox);
 document.getElementById('lightbox').addEventListener('click', e => {
-  if (e.target === document.getElementById('lightbox')) {
-    document.getElementById('lightbox').classList.remove('open');
-    document.body.style.overflow = '';
-  }
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
 });
 document.addEventListener('keydown', e => {
   const lb = document.getElementById('lightbox');
   if (!lb.classList.contains('open')) return;
-  if (e.key === 'Escape')      { document.getElementById('lb-close').click(); }
-  if (e.key === 'ArrowRight' && currentIndex < projectData.length - 1) openLightbox(currentIndex + 1);
-  if (e.key === 'ArrowLeft'  && currentIndex > 0) openLightbox(currentIndex - 1);
+  if (e.key === 'Escape')                                                  closeLightbox();
+  if (e.key === 'ArrowRight' && currentIndex < projectData.length - 1)    openLightbox(currentIndex + 1);
+  if (e.key === 'ArrowLeft'  && currentIndex > 0)                         openLightbox(currentIndex - 1);
 });
 
 // ─── VIDEO POPUP ──────────────────────────────────────────
@@ -472,4 +504,3 @@ document.getElementById('close-video').addEventListener('click', () => {
 
 </body>
 </html>
-
