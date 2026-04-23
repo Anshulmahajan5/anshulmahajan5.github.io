@@ -5,7 +5,7 @@ import re
 PROJECTS_DIR = 'projects'
 INDEX_FILE = 'index.html'
 
-# The exact template matching Claude's dynamic Lightbox structure
+# Template matching the bento grid structure
 html_template = """
 <div class="bento-item reveal" 
      data-title="{title}" 
@@ -31,9 +31,8 @@ def build():
         print("Error: 'projects' directory not found.")
         return
 
-    # --- STANDARD SORTING ---
-    # Folders will be sorted 01, 02, 03...
-    # Folder 01 appears at the TOP of the website.
+    # STANDARD SORTING (01, 02, 03...)
+    # Folder 01 appears at the TOP.
     folders = sorted([f for f in os.listdir(PROJECTS_DIR) if os.path.isdir(os.path.join(PROJECTS_DIR, f))])
     
     for folder in folders:
@@ -42,11 +41,8 @@ def build():
             with open(info_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 
-                # Format the fields into small yellow tags
                 fields_raw = data.get('fields', '3D Art')
                 field_spans = "".join([f'<span class="bento-field">{s.strip()}</span>' for s in fields_raw.split(',')])
-                
-                # Format images for the lightbox gallery
                 all_imgs = data.get('all_images', data.get('image', ''))
                 
                 generated_html += html_template.format(
@@ -63,7 +59,6 @@ def build():
     with open(INDEX_FILE, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Locate markers and swap content
     pattern = r'()(.*?)()'
     replacement = r'\1\n' + generated_html + r'\n\3'
     new_content = re.sub(pattern, replacement, content, flags=re.DOTALL)
@@ -71,7 +66,7 @@ def build():
     with open(INDEX_FILE, 'w', encoding='utf-8') as f:
         f.write(new_content)
     
-    print(f"Success: Injected {len(folders)} projects (Standard Order).")
+    print(f"Success: Injected {len(folders)} projects.")
 
 if __name__ == "__main__":
     build()
